@@ -26,8 +26,8 @@ template = '''
         TRIP_PARTY: [],
         TRIP_ABORTED: False,
         TRIP_REPORT: None,
-        TRIP_HUTS: [{HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: ''},
-                    {HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: ''},
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u''},
+                    {HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u''},
                    ]
     },
 '''
@@ -39,7 +39,7 @@ trips_raw = [
         TRIP_END: date(2010, 3, 7),
         TRIP_DESC: 'CUTC Freshers at Mt Somers',
         TRIP_PARTY: ['Katrina McCall', 'Martina Kratt', 'Sharon Hornblow', 'Becky Le Lievre'],
-        TRIP_HUTS: [{HUT_ARRIVAL: date(2010, 3, 6), HUT_SLEEP: False, HUT_NAME: 'Woolshed Creek Hut'},]
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2010, 3, 6), HUT_SLEEP: False, HUT_NAME: u'Woolshed Creek Hut'},]
     },
 ]
 
@@ -65,6 +65,7 @@ class HutVisit(object):
     def from_dict(cls, dict_):
         hv = cls()
         hv.name = dict_[HUT_NAME]
+        # TODO add place / region support -- there are duplicate hut names eg Pinnacles Hut
         hv.arrival = dict_[HUT_ARRIVAL]
         hv.sleep = dict_[HUT_SLEEP]
         return hv
