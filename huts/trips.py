@@ -14,6 +14,7 @@ TRIP_ABORTED = 'aborted' # bool, did we have to abort the trip, defaults to fals
 TRIP_REPORT = 'report' # URL for blogpost, photos, trip report, etc
 TRIP_HUTS = 'huts' # list of dicts with the following keys:
 HUT_NAME = 'hut_name' # string
+HUT_REGION = 'hut_region' # string, used to disambiguate huts with the same name
 HUT_ARRIVAL = 'hut_arrival' # date
 HUT_SLEEP = 'hut_sleep' # bool, did I sleep in the hut or just pass through
 
@@ -26,9 +27,8 @@ template = '''
         TRIP_PARTY: [],
         TRIP_ABORTED: False,
         TRIP_REPORT: None,
-        TRIP_HUTS: [{HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u''},
-                    {HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u''},
-                   ]
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: ''},
+                    {HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: ''},]
     },
 '''
 
@@ -65,7 +65,7 @@ class HutVisit(object):
     def from_dict(cls, dict_):
         hv = cls()
         hv.name = dict_[HUT_NAME]
-        # TODO add place / region support -- there are duplicate hut names eg Pinnacles Hut
+        hv.region = dict_.get(HUT_REGION)
         hv.arrival = dict_[HUT_ARRIVAL]
         hv.sleep = dict_[HUT_SLEEP]
         return hv

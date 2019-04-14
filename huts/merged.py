@@ -24,10 +24,13 @@ def huts_enriched_with_visits():
     huts = all_huts()
     for v in all_hut_visits():
         matches = filter(lambda h: h.name == v.name, huts)
+        if v.region:
+            # honor the "region" disambiguator, if present
+            matches = filter(lambda h: h.region == v.region, matches)
         if len(matches) == 0:
             raise ValueError("hut doesn't exist: {}".format(v.name))
         elif len(matches) > 1:
-            raise ValueError("multiple huts found with name: {}".format(v.name))
+            raise ValueError("multiple huts found: {}".format(matches))
         [match]  = matches
         match.tag_with_visit(v)
     return huts
