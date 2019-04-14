@@ -7,15 +7,15 @@ from hut import STATUS_OPEN, island_order, region_order, place_order
 from merged import huts_enriched_with_visits
 
 
-def checklist(huts_by_category, include_closed=True, sort_fn=None):
+def checklist(huts_by_category, sort_fn=None):
     '''Operates on a dictionary where the keys are categories and
     the values are lists of (enriched) Huts. Return a string that can
-    be printed/written to file/etc. CLOSED huts will be included in
-    the checklist unless include_closed is False. Sort order within
-    each category defaults to the hut name, but can be customized by
-    passing in a sort_fn. Sort order of the categories is fixed:
-    islands will be printed in island_order (north to south), regions
-    in region_order (north to south), places in place_order (alphabetical).
+    be printed/written to file/etc. Sort order within each category
+    defaults to the hut name, but can be customized by passing in a
+    sort_fn. Sort order of the categories is fixed:
+      - islands will be printed in island_order (north to south),
+      - regions in region_order (north to south),
+      - places in place_order (alphabetical).
 
     Each hut in the checklist will be preceded by a [ ] if visited, [X] if
       not visited and OPEN, or [-] if not visited and CLOSED.
@@ -25,9 +25,6 @@ def checklist(huts_by_category, include_closed=True, sort_fn=None):
     Huts that have been visited but not slept in will then be
       followed by '(have not slept in hut)'.
     ''' 
-    if not include_closed:
-        raise NotImplementedError('no ability to exclude closed yet')
-
     return checklist_recursive(huts_by_category, '', sort_fn=sort_fn)
 
 
@@ -86,6 +83,9 @@ def checklist_recursive(huts_by_category, indent, sort_fn=None):
         # print the category header
         visited_in_category = category_counts[c][0]
         total_in_category = category_counts[c][1]
+        if total_in_category == 0:
+            # can occur if we're excluding closed huts
+            continue
         result.append(u'{}{} ({} of {}):'.format(indent, c.upper(), visited_in_category, total_in_category))
 
         # base case: we're at hut level so we just print the huts
@@ -124,14 +124,15 @@ def checklist_recursive(huts_by_category, indent, sort_fn=None):
 
 
 if __name__ == '__main__':
-    from merged import by_all, by_island, by_region, by_place, by_island_by_region, by_region_by_place, by_island_by_region_by_place
+    from merged import by_all, by_island, by_region, by_place, by_island_by_region, by_region_by_place, by_island_by_region_by_place, filter_open
     #for item in checklist(by_all(huts_enriched_with_visits())):
     #for item in checklist(by_island(huts_enriched_with_visits())):
     #for item in checklist(by_region(huts_enriched_with_visits())):
     #for item in checklist(by_place(huts_enriched_with_visits())):
     #for item in checklist(by_island_by_region(huts_enriched_with_visits())):
     #for item in checklist(by_region_by_place(huts_enriched_with_visits())):
-    for item in checklist(by_island_by_region_by_place(huts_enriched_with_visits())):
+    for item in checklist(by_island_by_region_by_place(filter_open(huts_enriched_with_visits())), sort_fn=lambda h: -1*h.lat):
+    #for item in checklist(by_island_by_region_by_place(huts_enriched_with_visits())):
         print item.encode('utf-8')
 
     # for k, v in count_visits_recursive(by_island_by_region_by_place(huts_enriched_with_visits())).iteritems():

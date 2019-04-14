@@ -2,6 +2,9 @@
 The all-important function: huts_enriched_with_visits(). Merges the data
 from all_huts() with the data from all_hut_visits().
 
+Also exposes a function for filtering huts:
+    filter_open
+
 Also exposes functions for hierarchically organizing the huts:
     by all (degenerate),
     by_island, by region, by place, 
@@ -11,7 +14,7 @@ Also exposes functions for hierarchically organizing the huts:
 
 from collections import defaultdict
 
-from hut import all_huts, island_order, region_order, place_order
+from hut import all_huts, island_order, region_order, place_order, STATUS_OPEN
 from trips import all_hut_visits
 
 
@@ -67,6 +70,9 @@ def by_island_by_region_by_place(huts):
     for h in huts:
         result[h.island][h.region][h.place].append(h)
     return result
+
+def filter_open(huts):
+    return filter(lambda x: x.status == STATUS_OPEN, huts)
 
 def summary(huts):
     total = 0
