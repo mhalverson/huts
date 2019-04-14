@@ -2,13 +2,16 @@
 The all-important function: huts_enriched_with_visits(). Merges the data
 from all_huts() with the data from all_hut_visits().
 
-Also exposes functions for hierarchically sorting the huts:
-by all (degenerate), by region, by place, or by region by place.
+Also exposes functions for hierarchically organizing the huts:
+    by all (degenerate),
+    by_island, by region, by place, 
+    by_island_by_region, by_region_by_place,
+    by_island_by_region_by_place.
 '''
 
 from collections import defaultdict
 
-from hut import all_huts
+from hut import all_huts, island_order, region_order, place_order
 from trips import all_hut_visits
 
 
@@ -29,10 +32,10 @@ def huts_enriched_with_visits():
 def by_all(huts):
     return {u'All huts': huts}  
 
-def by_place(huts):
+def by_island(huts):
     result = defaultdict(list)
     for h in huts:
-        result[h.place].append(h)
+        result[h.island].append(h)
     return result
 
 def by_region(huts):
@@ -41,10 +44,28 @@ def by_region(huts):
         result[h.region].append(h)
     return result
 
+def by_place(huts):
+    result = defaultdict(list)
+    for h in huts:
+        result[h.place].append(h)
+    return result
+
+def by_island_by_region(huts):
+    result = defaultdict(lambda: defaultdict(list))
+    for h in huts:
+        result[h.island][h.region].append(h)
+    return result
+
 def by_region_by_place(huts):
     result = defaultdict(lambda: defaultdict(list))
     for h in huts:
         result[h.region][h.place].append(h)
+    return result
+
+def by_island_by_region_by_place(huts):
+    result = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+    for h in huts:
+        result[h.island][h.region][h.place].append(h)
     return result
 
 def summary(huts):
@@ -72,7 +93,14 @@ if __name__ == '__main__':
 
     # pprint(huts_by_place().keys())
     # pprint(huts_by_region().keys())
-    for k, v in by_region_by_place(h).iteritems():
-        for k2, v2 in v.iteritems():
-            print k, k2, len(v2)
-
+    dict_ = by_island_by_region_by_place(h)
+    for i in island_order:
+        huts_by_island = dict_[i]
+        for r in region_order:
+            if r in huts_by_island:
+                huts_by_region = huts_by_island[r]
+                for p in place_order:
+                    if p in huts_by_region:
+                        huts_by_place = huts_by_region[p]
+                        # for hut in sorted(huts_by_place.keys()):
+                        print i, r, p.encode('utf-8'), len(huts_by_place)

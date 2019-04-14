@@ -39,7 +39,7 @@ trips_raw = [
         TRIP_END: date(2010, 3, 7),
         TRIP_DESC: 'CUTC Freshers at Mt Somers',
         TRIP_PARTY: ['Katrina McCall', 'Martina Kratt', 'Sharon Hornblow', 'Becky Le Lievre'],
-        TRIP_HUTS: [{HUT_ARRIVAL: date(2010, 3, 6), HUT_SLEEP: False, HUT_NAME: u'Woolshed Creek Hut'},]
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2010, 3, 6), HUT_SLEEP: False, HUT_NAME: u'Woolshed Creek Hut'},],
     },
 ]
 
