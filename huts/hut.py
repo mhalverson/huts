@@ -1,6 +1,6 @@
 '''
 Defines the object representation of a Hut.
-Exposes a list of all huts in New Zealand with all_huts().
+Exposes a list of all DOC huts (and a few non-DOC huts) in New Zealand with all_huts().
 Exposes lists of all places, all regions, all islands in definitive sort-orders.
 '''
 
@@ -9,7 +9,8 @@ import json
 import os.path
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-HUTS_FILE = os.path.join(BASE_DIR, 'data', 'DOC_Huts.geojson')
+DOC_HUTS_FILE = os.path.join(BASE_DIR, 'data', 'DOC_Huts.geojson')
+NON_DOC_HUTS_FILE = os.path.join(BASE_DIR, 'data', 'non_DOC_Huts.json')
 
 STATUS_OPEN = 'OPEN'
 
@@ -72,19 +73,21 @@ class Hut(object):
             self.sleep = v.sleep
 
     @classmethod
-    def from_json(cls, obj):
+    def from_geojson(cls, obj):
         h = cls()
 
         props = obj['properties']
         geom = obj['geometry']
 
-        h.name = unicode(props['name'])
+        h.name = unicode(props['name']).strip()
         h.place = unicode(props['place'] or 'No place')
         h.region = unicode(props['region'] or 'No region')
         h.island = unicode(_lookup_island(h.region))
         h.status = props['status']
         h.lng = geom['coordinates'][0]
         h.lat = geom['coordinates'][1]
+
+        h.doc_maintained = True  # hacky, but meh.
 
         # will be filled in later from HutVisit data
         h.visited = False
@@ -93,17 +96,53 @@ class Hut(object):
 
         return h
 
-def all_huts():
+    @classmethod
+    def from_json(cls, obj):
+        '''special hand-crafted dataset of non-DOC maintained huts
+        that I have visited'''
+        h = cls()
+
+        h.name = unicode(obj['name'])
+        h.place = unicode(obj['place'])
+        h.region = unicode(obj['region'])
+        h.island = unicode(obj['island'])
+        h.lng = obj['lng']
+        h.lat = obj['lat']
+
+        h.doc_maintained = False  # hacky, but meh.
+
+        # will be filled in later from HutVisit data
+        h.visited = False
+        h.dates = []
+        h.sleep = False
+
+        return h
+
+def _doc_huts():
     huts_json = None
-    with open(HUTS_FILE) as f:
+    with open(DOC_HUTS_FILE) as f:
         huts_json = json.load(f)
     huts_json_list = huts_json['features']
 
     huts_list = []
     for h in huts_json_list:
+        huts_list.append(Hut.from_geojson(h))
+
+    return huts_list
+
+def _non_doc_huts():
+    huts_json = None
+    with open(NON_DOC_HUTS_FILE) as f:
+        huts_json = json.load(f)
+
+    huts_list = []
+    for h in huts_json:
         huts_list.append(Hut.from_json(h))
 
     return huts_list
+
+def all_huts():
+    return _doc_huts() + _non_doc_huts()
 
 _places = list(set(map(lambda h: h.place, all_huts())))
 place_order = sorted(_places)

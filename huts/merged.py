@@ -30,7 +30,7 @@ def huts_enriched_with_visits():
         if len(matches) == 0:
             raise ValueError("hut doesn't exist: {}".format(v.name))
         elif len(matches) > 1:
-            raise ValueError("multiple huts found: {}".format(matches))
+            raise ValueError("multiple huts found: {}".format(', '.join(map(str, matches))))
         [match]  = matches
         match.tag_with_visit(v)
     return huts

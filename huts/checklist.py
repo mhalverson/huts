@@ -102,12 +102,15 @@ def checklist_recursive(huts_by_category, indent, sort_fn=None):
                     checkbox_string = '[-]'
                 else:
                     checkbox_string = '[ ]'
+                name_string = h.name
+                if not h.doc_maintained:
+                    name_string += ' (not DOC maintained)'
                 visit_string = ''
                 if h.dates:
-                    visit_string = ' (' + ' '.join(map(str, h.dates)) + ')'
+                    visit_string = ' (' + ', '.join(map(str, h.dates)) + ')'
                 if h.visited and not h.sleep:
                     visit_string += ' (did not sleep in hut)'
-                result.append(u'{}{} {}{}'.format(indent + INDENT_INCREMENT, checkbox_string, h.name, visit_string))
+                result.append(u'{}{} {}{}'.format(indent + INDENT_INCREMENT, checkbox_string, name_string, visit_string))
 
         # recursive step: recur on the subcategories, increasing the indent
         else:
@@ -131,8 +134,8 @@ if __name__ == '__main__':
     #for item in checklist(by_place(huts_enriched_with_visits())):
     #for item in checklist(by_island_by_region(huts_enriched_with_visits())):
     #for item in checklist(by_region_by_place(huts_enriched_with_visits())):
-    for item in checklist(by_island_by_region_by_place(filter_open(huts_enriched_with_visits())), sort_fn=lambda h: -1*h.lat):
-    #for item in checklist(by_island_by_region_by_place(huts_enriched_with_visits())):
+    #for item in checklist(by_island_by_region_by_place(filter_open(huts_enriched_with_visits())), sort_fn=lambda h: -1*h.lat):
+    for item in checklist(by_island_by_region_by_place(huts_enriched_with_visits())):
         print item.encode('utf-8')
 
     # for k, v in count_visits_recursive(by_island_by_region_by_place(huts_enriched_with_visits())).iteritems():

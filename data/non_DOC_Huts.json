@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Upper Caples Hut",
+	"place": "Greenstone and Caples Conservation Areas",
+	"region": "Otago",
+	"island": "South Island",
+	"lng": 168.22219,
+	"lat": -44.84395
+    },
+    {
+        "name": "Robin Saddle Hut",
+	"place": "Fiordland National Park",
+	"region": "Fiordland",
+	"island": "South Island",
+	"lng": 167.36499,
+	"lat": -45.19622
+    }
+]
