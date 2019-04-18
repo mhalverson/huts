@@ -4,7 +4,6 @@ Utility for creating checklists of which huts have/haven't been visited.
 from collections import defaultdict
 
 from hut import STATUS_OPEN, island_order, region_order, place_order
-from merged import huts_enriched_with_visits
 
 
 def checklist(huts_by_category, sort_fn=None):
@@ -106,8 +105,8 @@ def checklist_recursive(huts_by_category, indent, sort_fn=None):
                 if not h.doc_maintained:
                     name_string += ' (not DOC maintained)'
                 visit_string = ''
-                if h.dates:
-                    visit_string = ' (' + ', '.join(map(str, h.dates)) + ')'
+                if h.visited:
+                    visit_string = ' ({})'.format(h.render_dates_visited())
                 if h.visited and not h.sleep:
                     visit_string += ' (did not sleep in hut)'
                 result.append(u'{}{} {}{}'.format(indent + INDENT_INCREMENT, checkbox_string, name_string, visit_string))
@@ -127,7 +126,13 @@ def checklist_recursive(huts_by_category, indent, sort_fn=None):
 
 
 if __name__ == '__main__':
-    from merged import by_all, by_island, by_region, by_place, by_island_by_region, by_region_by_place, by_island_by_region_by_place, filter_open
+    from merged import (
+            huts_enriched_with_visits,
+            by_all, by_island, by_region, by_place,
+            by_island_by_region, by_region_by_place,
+            by_island_by_region_by_place,
+            filter_open
+    )
     #for item in checklist(by_all(huts_enriched_with_visits())):
     #for item in checklist(by_island(huts_enriched_with_visits())):
     #for item in checklist(by_region(huts_enriched_with_visits())):

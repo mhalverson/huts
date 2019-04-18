@@ -5,7 +5,8 @@
 	"region": "Otago",
 	"island": "South Island",
 	"lng": 168.22219,
-	"lat": -44.84395
+	"lat": -44.84395,
+	"staticLink": "https://tramper.nz/2370/upper-caples-hut-closed-/"
     },
     {
         "name": "Robin Saddle Hut",
@@ -13,6 +14,7 @@
 	"region": "Fiordland",
 	"island": "South Island",
 	"lng": 167.36499,
-	"lat": -45.19622
+	"lat": -45.19622,
+	"staticLink": "https://tramper.nz/16884/robin-saddle-hut/"
     }
 ]

@@ -17,7 +17,7 @@ HUT_NAME = 'hut_name' # string
 HUT_REGION = 'hut_region' # string, used to disambiguate huts with the same name
 HUT_ARRIVAL = 'hut_arrival' # date
 HUT_SLEEP = 'hut_sleep' # bool, did I sleep in the hut or just pass through
-HUT_MULTIPLE_NIGHTS = 'hut_multiple_nights' # if multiple nights spent in the same hut, how many nights total  TODO add rendering support for the date range, not just the arrival date
+HUT_MULTIPLE_NIGHTS = 'hut_multiple_nights' # if multiple nights spent in the same hut, how many nights total
 HUT_IS_DOC_MAINTAINED = 'hut_is_doc_maintained' # bool, if it's not maintained by DOC then don't try to look it up
 
 
@@ -424,6 +424,7 @@ class HutVisit(object):
         hv.name = dict_[HUT_NAME]
         hv.region = dict_.get(HUT_REGION)
         hv.arrival = dict_[HUT_ARRIVAL]
+        hv.num_days = dict_.get(HUT_MULTIPLE_NIGHTS, 1)
         hv.sleep = dict_[HUT_SLEEP]
         return hv
 
