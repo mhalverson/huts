@@ -18,6 +18,16 @@ There are two main ways to render the data:
 * checklist (html or plaintext)
 * map
 
+Special call-out that the checklist renderer is agnostic to the input -- the
+checkboxes are determined solely by the hut list you pass in. If you pass in a
+single hut on the North Island, it will think the North Island only has one
+hut. If you don't pass in any huts for Fiordland National Park, it will omit
+Fiordland National Park entirely.
+
+The map renderer has the same behavior -- the markers are determined solely by
+the hut list you pass in. Any regions not represented in the hut list will be
+omitted from the LayerControl.
+
 # Setup
 
 * `virtualenv env` to create a virtualenv named env that will hold our

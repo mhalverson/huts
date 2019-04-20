@@ -17,7 +17,6 @@ NON_DOC_HUTS_FILE = os.path.join(BASE_DIR, 'data', 'non_DOC_Huts.json')
 STATUS_OPEN = 'OPEN'
 
 
-# TODO consider removing huts with unknown place or region
 unknown_place = u'Unknown place'
 
 regions_north = [

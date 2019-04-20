@@ -137,7 +137,7 @@ if __name__ == '__main__':
             by_all, by_island, by_region, by_place,
             by_island_by_region, by_region_by_place,
             by_island_by_region_by_place,
-            filter_open
+            filter_open, filter_known_region_known_place,
     )
     html = False
     if len(sys.argv) > 1 and sys.argv[1] == 'html':
@@ -149,7 +149,7 @@ if __name__ == '__main__':
     #for item in checklist(by_island_by_region(huts_enriched_with_trips())):
     #for item in checklist(by_region_by_place(huts_enriched_with_trips())):
     #for item in checklist(by_island_by_region_by_place(filter_open(huts_enriched_with_trips())), sort_fn=lambda h: -1*h.lat):
-    for item in checklist(by_island_by_region_by_place(huts_enriched_with_trips()), html=html):
+    for item in checklist(by_island_by_region_by_place(filter_known_region_known_place(huts_enriched_with_trips())), html=html):
         print item.encode('utf-8')
 
     # for k, v in count_visits_recursive(by_island_by_region_by_place(huts_enriched_with_trips())).iteritems():
