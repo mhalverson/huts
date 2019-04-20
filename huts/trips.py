@@ -6,19 +6,19 @@ Exposes all trips taken with all_trips() and all hut visits with all_hut_visits(
 
 from datetime import date
 
-TRIP_START = 'trip_start' # date
-TRIP_END = 'trip_end' # date
-TRIP_DESC = 'trip_desc' # string, brief name / description of the trip
-TRIP_PARTY = 'party' # list of strings of (other) party members' names
+TRIP_START = 'trip_start' # date, required
+TRIP_END = 'trip_end' # date, required
+TRIP_DESC = 'trip_desc' # string, brief name / description of the trip, required
+TRIP_PARTY = 'party' # list of strings of (other) party members' names, defaults to ["don't remember"]
 TRIP_ABORTED = 'aborted' # bool, did we have to abort the trip, defaults to false
-TRIP_REPORTS = 'reports' # list of strings of URLs for blogpost, photos, trip report, etc
-TRIP_HUTS = 'huts' # list of dicts with the following keys:
-HUT_NAME = 'hut_name' # string
-HUT_REGION = 'hut_region' # string, used to disambiguate huts with the same name
-HUT_ARRIVAL = 'hut_arrival' # date
-HUT_SLEEP = 'hut_sleep' # bool, did I sleep in the hut or just pass through
-HUT_MULTIPLE_NIGHTS = 'hut_multiple_nights' # if multiple nights spent in the same hut, how many nights total
-HUT_IS_DOC_MAINTAINED = 'hut_is_doc_maintained' # bool, if it's not maintained by DOC then don't try to look it up
+TRIP_REPORTS = 'reports' # list of strings of URLs for blogpost, photos, trip report; defaults to []
+TRIP_HUTS = 'huts' # list of dicts with the following keys; defaults to []
+HUT_NAME = 'hut_name' # string, required
+HUT_REGION = 'hut_region' # string, used to disambiguate huts with the same name, defaults to None
+HUT_ARRIVAL = 'hut_arrival' # date, required
+HUT_SLEEP = 'hut_sleep' # bool, did I sleep in the hut or just pass through, required
+HUT_MULTIPLE_NIGHTS = 'hut_multiple_nights' # if multiple nights spent in the same hut, how many nights total; defaults to 1
+HUT_IS_DOC_MAINTAINED = 'hut_is_doc_maintained' # bool, if it's not maintained by DOC then won't try to look it up; defaults to True
 
 
 template = '''
@@ -30,7 +30,7 @@ template = '''
         TRIP_REPORTS: [''],
         TRIP_PARTY: [],
         TRIP_HUTS: [{HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
-                    {HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: ''},]
+                    {HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u''},]
     },
 '''
 
@@ -67,7 +67,6 @@ trips_raw = [
         TRIP_END: date(2010, 5, 2),
         TRIP_DESC: 'Mt Tinline',
         TRIP_REPORTS: ['https://www.facebook.com/mhhalverson/media_set?set=a.1451615844129&type=3'],
-        TRIP_HUTS: []
     },
     {
         TRIP_START: date(2010, 5, 9),
@@ -83,7 +82,6 @@ trips_raw = [
         TRIP_DESC: 'Ice climbing at Franz Josef',
         TRIP_REPORTS: ['https://www.facebook.com/mhhalverson/media_set?set=a.1451726206888&type=3'],
         TRIP_PARTY: ['Becky Le Lievre', 'Martina Kratt', 'Katrina McCall', 'Oli Marsh', 'Dave Manning', 'Kirstie McHale', 'Jana Ringleb', 'others'],
-        TRIP_HUTS: []
     },
     {
         TRIP_START: date(2010, 5, 29),
@@ -91,7 +89,6 @@ trips_raw = [
         TRIP_DESC: 'TWALK 2010',
         TRIP_REPORTS: ['https://www.facebook.com/mhhalverson/media_set?set=a.1451768327941&type=3'],
         TRIP_PARTY: ['Laurie Slesar', 'Katrina McCall', 'Becky Le Lievre', 'Wesley', 'Martina Kratt'],
-        TRIP_HUTS: []
     },
     {
         TRIP_START: date(2010, 6, 5),
@@ -160,7 +157,6 @@ trips_raw = [
                        'https://www.facebook.com/photo.php?fbid=459899371256&set=a.459898906256&type=3&theater',
                       ],
         TRIP_PARTY: ['Brian Thorne', 'Sophie Manning', 'Dave Manning', 'Ellen Ashmore', 'Oli Marsh', 'Eng Eu', 'others'],
-        TRIP_HUTS: []
     },
     {
         TRIP_START: date(2010, 8, 7),
@@ -269,7 +265,6 @@ trips_raw = [
         TRIP_DESC: 'Mt Cheeseman dayhike',
         TRIP_REPORTS: ['https://www.facebook.com/mhhalverson/posts/1709475050448'],
         TRIP_PARTY: ['Rune Thing', 'others'],
-        TRIP_HUTS: []
     },
     {
         TRIP_START: date(2010, 12, 20), # iffy on the date
@@ -279,7 +274,6 @@ trips_raw = [
                        'https://www.facebook.com/mhhalverson/timeline/story?ut=60&wstart=1262332800&wend=1293868799&hash=-6185755761823045467&pagefilter=3',
                        'https://www.facebook.com/mhhalverson/posts/1709475050448'],
         TRIP_PARTY: ['Harriet Hughes', 'Sophia Ai', 'Kerry Bellringer'],
-        TRIP_HUTS: []
     },
     {
         TRIP_START: date(2013, 2, 24),
@@ -288,7 +282,6 @@ trips_raw = [
         TRIP_REPORTS: ['https://www.facebook.com/photo.php?fbid=10151534590010992&set=a.10151534589925992&type=3&theater',
                        'https://www.facebook.com/photo.php?fbid=10151534590135992&set=a.10151534589925992&type=3&theater'],
         TRIP_PARTY: ['Adam Kuang', 'Brian Thorne', 'Dave Manning', 'Sophie Manning', 'Giselle Clarkson'],
-        TRIP_HUTS: []
     },
     {
         TRIP_START: date(2013, 3, 1),
@@ -311,7 +304,6 @@ trips_raw = [
         TRIP_DESC: 'Avalanche Peak dayhike',
         TRIP_REPORTS: ['https://www.facebook.com/mhhalverson/posts/10205236495125673'],
         TRIP_PARTY: ['Claire Woolf'],
-        TRIP_HUTS: []
     },
     {
         TRIP_START: date(2015, 3, 14),
@@ -396,7 +388,6 @@ trips_raw = [
         TRIP_ABORTED: True,  # I camped on the ridge and didn't actually go up to Tara Tama
         TRIP_REPORTS: ['https://www.facebook.com/ivor.heijnen/posts/10157178046720908'],
         TRIP_PARTY: ['Dave Manning', 'Ivor Heijnen'],
-        TRIP_HUTS: []
     },
 ]
 
@@ -407,10 +398,10 @@ class Trip(object):
         t.start = dict_[TRIP_START]
         t.end = dict_[TRIP_END]
         t.desc = dict_[TRIP_DESC]
-        t.party = dict_.get(TRIP_PARTY, "don't remember")
-        t.aborted = dict_.get(TRIP_PARTY, False)
-        t.reports = dict_.get(TRIP_REPORTS)
-        t.huts = [HutVisit.from_dict(hv) for hv in dict_.get(TRIP_HUTS, [])]
+        t.party = tuple(dict_.get(TRIP_PARTY, ["don't remember"]))
+        t.aborted = dict_.get(TRIP_ABORTED, False)
+        t.reports = tuple(dict_.get(TRIP_REPORTS, []))
+        t.hut_visits = tuple([HutVisit.from_dict(hv) for hv in dict_.get(TRIP_HUTS, [])])
         return t
 
     def __str__(self):

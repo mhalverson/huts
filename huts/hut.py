@@ -72,32 +72,76 @@ class Hut(object):
     def __str__(self):
         return self.name
 
-    def tag_with_visit(self, v):
-        '''mutate the object, adding data from the supplied HutVisit'''
-        if self.name != v.name:
-            raise ValueError('HutVisit {} does not correspond to Hut {}'.format(v.name, self.name))
-        self.visited = True
-        self.dates.append((v.arrival, v.num_days))
-        if not self.sleep:
-            self.sleep = v.sleep
+    def matches(self, hut_visit):
+        '''Decides if the specified hut_visit corresponds to this hut.'''
+        name_matches = (self.name == hut_visit.name)
+        region_is_defined = bool(hut_visit.region)
+        region_matches = (self.region == hut_visit.region)
 
-    def render_name_with_link(self):
-        if self.url:
+        if region_is_defined:
+            # honor the "region" disambiguator, if present
+            return name_matches and region_matches
+        else:
+            return name_matches
+
+    def tag_with_trip(self, trip):
+        '''Mutate self, adding the HutVisit data from the supplied trip. This
+        method is idempotent so feel free to call multiple times with the same
+        trip.'''
+        if trip in self.trips_tagged:
+            return
+
+        matches = filter(lambda hv: self.matches(hv), trip.hut_visits)
+        if len(matches) == 0:
+            raise ValueError('No corresponding HutVisits for Hut {}'.format(self.name))
+        self.trips_tagged.add(trip)
+
+        self.visited = True
+        self.trips.append(trip)
+        if not self.sleep:
+            for v in matches:
+                self.sleep = v.sleep
+
+    def render_name(self, html=False):
+        if html and self.url:
             return u'<a href="{}">{}</a>'.format(self.url, self.name)
 
         return self.name
 
-    def render_dates_visited(self):
-        'Collapses date ranges'
+    def render_dates_visited(self, html=False):
+        '''Collapses date ranges. If html is True, also includes links to trip
+        reports.'''
         strs = []
-        for date, num_days in self.dates:
-            if num_days == 1:
-                strs.append(str(date))
+        link_counter = 1
+        for t in self.trips:
+            matches = filter(lambda hv: self.matches(hv), t.hut_visits)
+            date_strs = []
+            for hv in matches:
+                if hv.num_days == 1:
+                    date_strs.append(str(hv.arrival))
+                else:
+                    start = str(hv.arrival)
+                    end = str(hv.arrival + timedelta(days=hv.num_days - 1))
+                    date_strs.append('{} to {}'.format(start, end))
+            if len(matches) == 1:
+                visit_str = date_strs[0]
+            elif len(matches) == 2:
+                visit_str = ' and '.join(date_strs)
+            elif len(matches) > 2:
+                # "date1, date2, and date3"
+                visit_str = ', and '.join([', '.join(date_strs[:-1]), date_strs[-1]])
             else:
-                start = str(date)
-                end = str(date + timedelta(days=num_days - 1))
-                strs.append('{} to {}'.format(start,end))
-        return ', '.join(strs)
+                raise ValueError('unexpected amount of matches: {}'.format(matches))
+
+            if html and t.reports:
+                trip_report_strs = []
+                for url in t.reports:
+                    trip_report_strs.append('<a href="{}">link{}</a>'.format(url, link_counter))
+                    link_counter += 1
+                visit_str = '{} [{}]'.format(visit_str, ', '.join(trip_report_strs))
+
+            strs.append(visit_str)
+        return '; '.join(strs)
 
     @classmethod
     def from_geojson(cls, obj, doc_maintained=True):
@@ -118,8 +162,9 @@ class Hut(object):
         h.doc_maintained = doc_maintained
 
         # will be filled in later from HutVisit data
+        h.trips_tagged = set([])
         h.visited = False
-        h.dates = []
+        h.trips = []
         h.sleep = False
 
         return h
@@ -141,8 +186,9 @@ class Hut(object):
         h.doc_maintained = doc_maintained
 
         # will be filled in later from HutVisit data
+        h.trips_tagged = set([])
         h.visited = False
-        h.dates = []
+        h.trips = []
         h.sleep = False
 
         return h

@@ -1,6 +1,6 @@
 '''
-The all-important function: huts_enriched_with_visits(). Merges the data
-from all_huts() with the data from all_hut_visits().
+The all-important function: huts_enriched_with_trips(). Merges the data
+from all_huts() with the data from all_trips().
 
 Also exposes a function for filtering huts:
     filter_open
@@ -15,24 +15,22 @@ Also exposes functions for hierarchically organizing the huts:
 from collections import defaultdict
 
 from hut import all_huts, island_order, region_order, place_order, STATUS_OPEN
-from trips import all_hut_visits
+from trips import all_trips
 
 
-def huts_enriched_with_visits():
+def huts_enriched_with_trips():
     '''Returns a list of all huts (open or closed) tagged with
-    the HutVisit data from trips.'''
+    the Trip and HutVisit data from trips.py.'''
     huts = all_huts()
-    for v in all_hut_visits():
-        matches = filter(lambda h: h.name == v.name, huts)
-        if v.region:
-            # honor the "region" disambiguator, if present
-            matches = filter(lambda h: h.region == v.region, matches)
-        if len(matches) == 0:
-            raise ValueError("hut doesn't exist: {}".format(v.name))
-        elif len(matches) > 1:
-            raise ValueError("multiple huts found: {}".format(', '.join(map(str, matches))))
-        [match]  = matches
-        match.tag_with_visit(v)
+    for t in all_trips():
+        for hv in t.hut_visits:
+            matches = filter(lambda h: h.matches(hv), huts)
+            if len(matches) == 0:
+                raise ValueError("hut doesn't exist: {}".format(hv.name))
+            elif len(matches) > 1:
+                raise ValueError("multiple huts found: {}".format(', '.join(map(str, matches))))
+            [match]  = matches
+            match.tag_with_trip(t)
     return huts
 
 def by_all(huts):

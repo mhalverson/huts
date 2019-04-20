@@ -10,9 +10,9 @@ from hut import (
     regions_north, regions_south, unknown_region,
     unknown_place,
 )
-from merged import huts_enriched_with_visits
+from merged import huts_enriched_with_trips
 
-COOK_STRAIT = 'cook strait' # currently unused but thqt's ok :)
+COOK_STRAIT = 'cook strait' # currently unused but that's ok :)
 CENTER_OF_NORTH_ISLAND = 'center of north island'
 CENTER_OF_SOUTH_ISLAND = 'center of south island'
 
@@ -97,17 +97,17 @@ for i, m in island_maps.iteritems():
         NOT_VISITED: fg_not_visited_in_region
     }
 
-for h in huts_enriched_with_visits():
+for h in huts_enriched_with_trips():
     if h.visited:
         color = COLOR_HUT_VISITED
     else:
         color = COLOR_HUT_NOT_VISITED
 
-    popup_str = h.render_name_with_link()
+    popup_str = h.render_name(html=True)
     if h.place != unknown_place:
         popup_str = u'{} <br/> ({})'.format(popup_str, h.place)
     if h.visited:
-        popup_str = u'{}: <br/> visited {}'.format(popup_str, h.render_dates_visited())
+        popup_str = u'{}: <br/> visited {}'.format(popup_str, h.render_dates_visited(html=True))
     popup = folium.Popup(popup_str, max_width=150)
 
     marker = folium.Marker(
