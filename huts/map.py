@@ -5,12 +5,12 @@ huts have been visited.
 
 import folium
 
-from hut import (
+from huts.hut import (
     north_island, south_island,
     regions_north, regions_south, unknown_region,
     unknown_place,
 )
-from merged import huts_enriched_with_trips
+from huts.merged import huts_enriched_with_trips
 
 COOK_STRAIT = 'cook strait' # currently unused but that's ok :)
 CENTER_OF_NORTH_ISLAND = 'center of north island'
@@ -70,7 +70,7 @@ def maps(huts_with_trip_data):
 
     # By region
     region_groups = {}
-    for i, m in island_maps.iteritems():
+    for i, m in island_maps.items():
         region_groups[i] = {}
 
         if i == north_island:

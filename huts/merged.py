@@ -15,12 +15,12 @@ Also exposes functions for hierarchically organizing the huts:
 
 from collections import defaultdict
 
-from hut import (
+from huts.hut import (
     all_huts,
     island_order, region_order, unknown_region, place_order, unknown_place,
     STATUS_OPEN,
 )
-from trips import all_trips
+from huts.trips import all_trips
 
 
 def huts_enriched_with_trips():
@@ -29,7 +29,7 @@ def huts_enriched_with_trips():
     huts = all_huts()
     for t in all_trips():
         for hv in t.hut_visits:
-            matches = filter(lambda h: h.matches(hv), huts)
+            matches = list(filter(lambda h: h.matches(hv), huts))
             if len(matches) == 0:
                 raise ValueError("hut doesn't exist: {}".format(hv.name))
             elif len(matches) > 1:
@@ -78,10 +78,10 @@ def by_island_by_region_by_place(huts):
     return result
 
 def filter_open(huts):
-    return filter(lambda h: h.status == STATUS_OPEN, huts)
+    return list(filter(lambda h: h.status == STATUS_OPEN, huts))
 
 def filter_known_region_known_place(huts):
-    return filter(lambda h: h.region != unknown_region and h.place != unknown_place, huts)
+    return list(filter(lambda h: h.region != unknown_region and h.place != unknown_place, huts))
 
 def summary(huts):
     total = 0
@@ -118,4 +118,4 @@ if __name__ == '__main__':
                     if p in huts_by_region:
                         huts_by_place = huts_by_region[p]
                         # for hut in sorted(huts_by_place.keys()):
-                        print i, r, p.encode('utf-8'), len(huts_by_place)
+                        print(i, r, p, len(huts_by_place))

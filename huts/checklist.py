@@ -3,7 +3,7 @@ Utility for creating checklists of which huts have/haven't been visited.
 '''
 from collections import defaultdict
 
-from hut import STATUS_OPEN, island_order, region_order, place_order
+from huts.hut import STATUS_OPEN, island_order, region_order, place_order
 
 
 def checklist(huts_by_category, sort_fn=None, html=False):
@@ -36,15 +36,15 @@ def count_visits_recursive(huts_by_category):
     '''Given a dict, keys are categories, values are possibly nested categories.
     Returns another dict with the same keys, where the values are tuples of
     (huts visited, total huts) for each category.'''
-    vals = huts_by_category.values()
+    vals = list(huts_by_category.values())
     should_recur = (type(vals[0]) == type(defaultdict(list)))
 
     result = {}
     if not should_recur:
-        for k, v in huts_by_category.iteritems():
-            result[k] = (len(filter(lambda h: h.visited, v)), len(v))
+        for k, v in huts_by_category.items():
+            result[k] = (len(list(filter(lambda h: h.visited, v))), len(v))
     else:
-        for k, v in huts_by_category.iteritems():
+        for k, v in huts_by_category.items():
             recur_dict = count_visits_recursive(v)
             visited = 0
             total = 0
@@ -62,20 +62,20 @@ def checklist_recursive(huts_by_category, indent, sort_fn, html):
     result = []
 
     # determine category order
-    categories = huts_by_category.keys()
+    categories = set(huts_by_category.keys())
     if len(categories) == 1: # special for "by_all"
         category_order = categories
-    elif categories[0] in island_order:
+    elif categories.intersection(set(island_order)):
         category_order = island_order
-    elif categories[0] in region_order:
+    elif categories.intersection(set(region_order)):
         category_order = region_order
-    elif categories[0] in place_order:
+    elif categories.intersection(set(place_order)):
         category_order = place_order
     else:
         raise ValueError('unknown category: {}'.format(categories[0]))
 
     # determine if need to recur
-    vals = huts_by_category.values()
+    vals = list(huts_by_category.values())
     should_recur = (type(vals[0]) == type(defaultdict(list)))
 
     # prep the category counts
@@ -132,7 +132,7 @@ def checklist_recursive(huts_by_category, indent, sort_fn, html):
 
 if __name__ == '__main__':
     import sys
-    from merged import (
+    from huts.merged import (
             huts_enriched_with_trips,
             by_all, by_island, by_region, by_place,
             by_island_by_region, by_region_by_place,
@@ -150,9 +150,9 @@ if __name__ == '__main__':
     #for item in checklist(by_region_by_place(huts_enriched_with_trips())):
     #for item in checklist(by_island_by_region_by_place(filter_open(huts_enriched_with_trips())), sort_fn=lambda h: -1*h.lat):
     for item in checklist(by_island_by_region_by_place(filter_known_region_known_place(huts_enriched_with_trips())), html=html):
-        print item.encode('utf-8')
+        print(item)
 
-    # for k, v in count_visits_recursive(by_island_by_region_by_place(huts_enriched_with_trips())).iteritems():
-    #     print v[0], v[1], k.encode('utf-8')
-    # print count_visits_recursive(by_region_by_place(huts_enriched_with_trips()))
-    # print count_visits_recursive(by_island_by_region_by_place(huts_enriched_with_trips()))
+    # for k, v in count_visits_recursive(by_island_by_region_by_place(huts_enriched_with_trips())).items():
+    #     print(v[0], v[1], k)
+    # print(count_visits_recursive(by_region_by_place(huts_enriched_with_trips())))
+    # print(count_visits_recursive(by_island_by_region_by_place(huts_enriched_with_trips())))

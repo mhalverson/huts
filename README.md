@@ -30,15 +30,15 @@ omitted from the LayerControl.
 
 # Setup
 
-* `virtualenv env` to create a virtualenv named env that will hold our
+* `python3 -m venv env` to create a virtualenv named env that will hold our
   dependencies in a sandbox
 * `. env/bin/activate` to activate the virtualenv
-* `pip install -r requirements.in` to install the requirements into the
+* `pip3 install -r requirements.in` to install the requirements into the
   virtualenv. If you're having dependency version issues, you can see what I
   ended up with in `requirements.txt`. But know that I use `requirements.in` to
   track my immediate dependencies
 
 # Use
 
-* `python huts/checklist.py` to generate a checklist of huts visited (printed to stdout)
+* `PYTHONPATH=. python huts/checklist.py` to generate a checklist of huts visited (printed to stdout)
 * `jupyter notebook hut_map.ipynb` to start a Jupyter Notebook server for exploring maps

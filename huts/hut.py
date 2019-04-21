@@ -90,7 +90,7 @@ class Hut(object):
         if trip in self.trips_tagged:
             return
 
-        matches = filter(lambda hv: self.matches(hv), trip.hut_visits)
+        matches = list(filter(lambda hv: self.matches(hv), trip.hut_visits))
         if len(matches) == 0:
             raise ValueError('No corresponding HutVisits for Hut {}'.format(self.name))
         self.trips_tagged.add(trip)
@@ -113,7 +113,7 @@ class Hut(object):
         strs = []
         link_counter = 1
         for t in self.trips:
-            matches = filter(lambda hv: self.matches(hv), t.hut_visits)
+            matches = list(filter(lambda hv: self.matches(hv), t.hut_visits))
             date_strs = []
             for hv in matches:
                 if hv.num_days == 1:
@@ -149,12 +149,12 @@ class Hut(object):
         props = obj['properties']
         geom = obj['geometry']
 
-        h.name = unicode(props['name']).strip()
-        h.place = unicode(props['place'] or unknown_place)
-        h.region = unicode(props['region'] or unknown_region)
+        h.name = props['name'].strip()
+        h.place = props['place'] or unknown_place
+        h.region = props['region'] or unknown_region
         h.lng = geom['coordinates'][0]
         h.lat = geom['coordinates'][1]
-        h.island = unicode(_lookup_island(h.region, h.lat))
+        h.island = _lookup_island(h.region, h.lat)
         h.status = props['status']
         h.url = props['staticLink']
 
@@ -174,10 +174,10 @@ class Hut(object):
         that I have visited'''
         h = cls()
 
-        h.name = unicode(obj['name'])
-        h.place = unicode(obj['place'])
-        h.region = unicode(obj['region'])
-        h.island = unicode(obj['island'])
+        h.name = obj['name']
+        h.place = obj['place']
+        h.region = obj['region']
+        h.island = obj['island']
         h.lng = obj['lng']
         h.lat = obj['lat']
         h.url = obj['staticLink']
@@ -227,6 +227,6 @@ assert len(_regions) == len(region_order)
 
 if __name__ == '__main__':
     h = all_huts()
-    print h[0]
-    print len(place_order) # 116
-    print len(region_order) # 20
+    print(h[0])
+    print(len(place_order)) # 116
+    print(len(region_order)) # 20
