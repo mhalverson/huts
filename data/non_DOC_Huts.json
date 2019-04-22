@@ -16,5 +16,14 @@
 	"lng": 167.36499,
 	"lat": -45.19622,
 	"staticLink": "https://tramper.nz/16884/robin-saddle-hut/"
+    },
+    {
+        "name": "Ōtamahua Hut",
+	"place": "Banks Peninsula area",
+	"region": "Canterbury",
+	"island": "South Island",
+	"lng": 172.694178,
+	"lat": -43.628060,
+	"staticLink": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/otamahua-quail-island-recreation-reserve/things-to-do/otamahua-hut/"
     }
 ]
