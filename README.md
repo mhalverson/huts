@@ -42,13 +42,20 @@ omitted from the LayerControl.
 
 ## Dev
 
-* `PYTHONPATH=. python huts/checklist.py` to generate a checklist of huts
+* `PYTHONPATH=. python3 huts/checklist.py` to generate a checklist of huts
    visited (printed to stdout)
 * `jupyter notebook hut_map.ipynb` to start a Jupyter Notebook server for
    exploring maps
 
 ## Website
 
-* `PYTHONPATH=. python huts/checklist.py html > ../website/tramping/hut_checklist.html`
-   to regenerate the checklist of huts visited specifically for my personal
-   website
+Regenerate the checklist and map files for the website with the following commands:
+
+```
+PYTHONPATH=. python3 huts/checklist.py html > ../website/tramping/hut_checklist.html
+PYTHONPATH=. python3 huts/map.py
+./xform_map_for_website.sh rendered_map.north_island.html north_island_checklist_data.js > ../website/tramping/north_island_hut_map.html
+cp checklist_data.north_island.js ../website/tramping/north_island_checklist_data.js
+./xform_map_for_website.sh rendered_map.south_island.html south_island_checklist_data.js > ../website/tramping/south_island_hut_map.html
+cp checklist_data.south_island.js ../website/tramping/south_island_checklist_data.js
+```

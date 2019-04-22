@@ -6,6 +6,27 @@ from collections import defaultdict
 from huts.hut import STATUS_OPEN, island_order, region_order, place_order
 
 
+def newline(html):
+    if html:
+        return '<br/>'
+    return '\n'
+
+
+def header(html):
+    return newline(html).join([
+        'Hut names are links to the DOC page for the hut (except for the few huts not in the official DOC list).',
+        'Some of the huts also have links to photos/blog posts/reports for the trip where I visited the hut.',
+    ])
+
+
+def _intersperse(iterable, delimiter):
+    it = iter(iterable)
+    yield next(it)
+    for x in it:
+        yield delimiter
+        yield x
+
+
 def checklist(huts_by_category, sort_fn=None, html=False):
     '''Operates on a dictionary where the keys are categories and
     the values are lists of (enriched) Huts. Return a string that can
@@ -29,7 +50,11 @@ def checklist(huts_by_category, sort_fn=None, html=False):
     Hut name will be an anchor pointing to the hut's url.
     Links to trip reports will be added to the date strings.
     ''' 
-    return checklist_recursive(huts_by_category, '', sort_fn, html)
+    result = checklist_recursive(huts_by_category, '', sort_fn, html)
+    if html:
+        return list(_intersperse(result, newline(html)))
+    else:
+        return result
 
 
 def count_visits_recursive(huts_by_category):
@@ -129,10 +154,9 @@ def checklist_recursive(huts_by_category, indent, sort_fn, html):
     if not indent:
         visited = sum([v[0] for v in category_counts.values()])
         total = sum([v[1] for v in category_counts.values()])
-        result.append('GRAND TOTAL {} of {} visited'.format(visited, total))
+        result.append('TOTAL {} of {} visited'.format(visited, total))
 
     return result
-
 
 if __name__ == '__main__':
     import sys
@@ -146,14 +170,8 @@ if __name__ == '__main__':
     huts = filter_known_region_known_place(huts_enriched_with_trips())
 
     html = len(sys.argv) > 1 and sys.argv[1] == 'html'
-    newline = '<br/>' if html else '\n'
     if html:
-        print(newline.join([
-            'Hut names are links to the DOC page for the hut (except for the few huts not in the official DOC list).',
-            'Some of the huts also have links to photos/blog posts/reports for the trip where I visited the hut.',
-            ]))
-        print(2 * newline)
+        print(header(html))
+        print(2 * newline(html))
     for item in checklist(by_island_by_region_by_place(huts), html=html):
         print(item)
-        if html:
-            print(newline)

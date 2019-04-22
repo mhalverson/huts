@@ -10,7 +10,6 @@ from huts.hut import (
     regions_north, regions_south, unknown_region,
     unknown_place,
 )
-from huts.merged import huts_enriched_with_trips
 
 COOK_STRAIT = 'cook strait' # currently unused but that's ok :)
 CENTER_OF_NORTH_ISLAND = 'center of north island'
@@ -33,12 +32,18 @@ def _base_map(focus=COOK_STRAIT):
         location=MAP_DEFAULT_LOCATION,
         zoom_start=ZOOM_START,
         control_scale=True, # show a scale bar e.g. "100 km" or "50 mi"
-        # tiles='Stamen Terrain', # use a terrain-view for the underlying tileset
     )
 
     # Sometimes it is useful to enable lat/lng popups on the map. Do so by
     # uncommenting the following line:
     # m.add_child(folium.LatLngPopup())
+
+    layers = [
+        'OpenStreetMap',
+        'Stamen Terrain',
+    ]
+    for layer in layers:
+        folium.TileLayer(layer).add_to(m)
 
     return m
 
@@ -83,7 +88,7 @@ def maps(huts_with_trip_data):
 
         for r in filter(lambda r: r in regions_to_render, regions):
             fg_visited_in_region = folium.FeatureGroup(
-                name='{} - {}'.format(r, VISITED), show=False)
+                name='{} - {}'.format(r, VISITED), show=True)
             fg_visited_in_region.add_to(m)
 
             fg_not_visited_in_region = folium.FeatureGroup(
@@ -103,9 +108,9 @@ def maps(huts_with_trip_data):
 
         popup_str = h.render_name(html=True)
         if h.place != unknown_place:
-            popup_str = u'{} <br/> ({})'.format(popup_str, h.place)
+            popup_str = u'{} <br/> {}'.format(popup_str, h.place)
         if h.visited:
-            popup_str = u'{}: <br/> visited {}'.format(popup_str, h.render_dates_visited(html=True))
+            popup_str = u'{}: <br/> {}'.format(popup_str, h.render_dates_visited(html=True))
         popup = folium.Popup(popup_str, max_width=150)
 
         marker = folium.Marker(
@@ -121,3 +126,35 @@ def maps(huts_with_trip_data):
         folium.LayerControl().add_to(m)
 
     return island_maps
+
+
+if __name__=='__main__':
+    import json
+    import os
+    from huts.hut import BASE_DIR, island_order
+    from huts.merged import (
+            huts_enriched_with_trips,
+            filter_known_region_known_place,
+            by_region_by_place,
+    )
+    from huts.checklist import header, checklist
+    huts = filter_known_region_known_place(huts_enriched_with_trips())
+    island_maps = maps(huts)
+    huts_by_region = by_region_by_place(huts)
+
+    for i in island_order:
+        i_filename = i.lower().replace(' ', '_')
+        map_filename = os.path.join(BASE_DIR, 'rendered_map.{}.html'.format(i_filename))
+        print('Writing map HTML to file: {}'.format(map_filename))
+        with open(map_filename, 'w'):
+            island_maps[i].save(map_filename)
+
+        checklist_filename = os.path.join(BASE_DIR, 'checklist_data.{}.js'.format(i_filename))
+        print('Writing checklist data to file: {}'.format(checklist_filename))
+        with open(checklist_filename, 'w') as f:
+            checklist_data = {"header": header(html=True)}
+            for r, huts_by_place in huts_by_region.items():
+                checklist_data[r] = checklist({r: huts_by_place}, html=True)
+            f.write('var checklist_data = ')
+            f.write(json.dumps(checklist_data))
+            f.write(';')
