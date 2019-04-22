@@ -25,7 +25,7 @@ cat "$raw_map" | tail -n +$(($insert_script_line)) | head -n $(($map_style_start
 echo '        position: fixed;'
 echo '        width: 70.0%;'
 cat "$raw_map" | tail -n +$(($map_style_start_line + 3)) | head -n $(($map_style_end_offset - 3))
-echo '    <style>#summaryzone{margin-left: 70%;}</style>'
+echo '    <style>#summaryzone{margin-left: 70%; padding-left: 5px;}</style>'
 cat "$raw_map" | tail -n +$(($map_style_end_line + 1)) | head -n $(($map_div_line - $map_style_end_line - 1))
 echo "    <div class=\"folium-map\" id=\"${map_identifier}\"></div>"
 echo '    <div id="summaryzone"></div>'

@@ -15,7 +15,7 @@ def newline(html):
 def header(html):
     return newline(html).join([
         'Hut names are links to the DOC page for the hut (except for the few huts not in the official DOC list).',
-        'Some of the huts also have links to photos/blog posts/reports for the trip where I visited the hut.',
+        'Some of the huts also have links to photos/blog posts/reports for the trip where I visited the hut. These are typically Facebook posts and may not be publicly accessible.',
     ])
 
 
