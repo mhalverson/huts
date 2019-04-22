@@ -40,5 +40,15 @@ omitted from the LayerControl.
 
 # Use
 
-* `PYTHONPATH=. python huts/checklist.py` to generate a checklist of huts visited (printed to stdout)
-* `jupyter notebook hut_map.ipynb` to start a Jupyter Notebook server for exploring maps
+## Dev
+
+* `PYTHONPATH=. python huts/checklist.py` to generate a checklist of huts
+   visited (printed to stdout)
+* `jupyter notebook hut_map.ipynb` to start a Jupyter Notebook server for
+   exploring maps
+
+## Website
+
+* `PYTHONPATH=. python huts/checklist.py html > ../website/tramping/hut_checklist.html`
+   to regenerate the checklist of huts visited specifically for my personal
+   website

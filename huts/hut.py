@@ -111,7 +111,6 @@ class Hut(object):
         '''Collapses date ranges. If html is True, also includes links to trip
         reports.'''
         strs = []
-        link_counter = 1
         for t in self.trips:
             matches = list(filter(lambda hv: self.matches(hv), t.hut_visits))
             date_strs = []
@@ -135,8 +134,7 @@ class Hut(object):
             if html and t.reports:
                 trip_report_strs = []
                 for url in t.reports:
-                    trip_report_strs.append('<a href="{}">link{}</a>'.format(url, link_counter))
-                    link_counter += 1
+                    trip_report_strs.append('<a href="{}">link</a>'.format(url))
                 visit_str = '{} [{}]'.format(visit_str, ', '.join(trip_report_strs))
 
             strs.append(visit_str)

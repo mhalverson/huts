@@ -56,9 +56,13 @@ def count_visits_recursive(huts_by_category):
     return result
 
 
-INDENT_INCREMENT = 4 * ' '
-
 def checklist_recursive(huts_by_category, indent, sort_fn, html):
+    if html:
+        indent_char = '&nbsp;'
+    else:
+        indent_char = ' '
+    INDENT_INCREMENT = 8 * indent_char
+
     result = []
 
     # determine category order
@@ -101,11 +105,11 @@ def checklist_recursive(huts_by_category, indent, sort_fn, html):
             for h in huts:
                 checkbox_string = ''
                 if h.visited:
-                    checkbox_string = '[X]'
+                    checkbox_string = '\u2611'  if html else '[X]'
                 elif h.status != STATUS_OPEN:
-                    checkbox_string = '[-]'
+                    checkbox_string = '\u2610' if html else '[-]'
                 else:
-                    checkbox_string = '[ ]'
+                    checkbox_string = '\u2610' if html else '[ ]'
                 name_string = h.render_name(html=html)
                 if not h.doc_maintained:
                     name_string += ' (not DOC maintained)'
@@ -139,20 +143,17 @@ if __name__ == '__main__':
             by_island_by_region_by_place,
             filter_open, filter_known_region_known_place,
     )
-    html = False
-    if len(sys.argv) > 1 and sys.argv[1] == 'html':
-        html = True
-    #for item in checklist(by_all(huts_enriched_with_trips())):
-    #for item in checklist(by_island(huts_enriched_with_trips())):
-    #for item in checklist(by_region(huts_enriched_with_trips())):
-    #for item in checklist(by_place(huts_enriched_with_trips())):
-    #for item in checklist(by_island_by_region(huts_enriched_with_trips())):
-    #for item in checklist(by_region_by_place(huts_enriched_with_trips())):
-    #for item in checklist(by_island_by_region_by_place(filter_open(huts_enriched_with_trips())), sort_fn=lambda h: -1*h.lat):
-    for item in checklist(by_island_by_region_by_place(filter_known_region_known_place(huts_enriched_with_trips())), html=html):
-        print(item)
+    huts = filter_known_region_known_place(huts_enriched_with_trips())
 
-    # for k, v in count_visits_recursive(by_island_by_region_by_place(huts_enriched_with_trips())).items():
-    #     print(v[0], v[1], k)
-    # print(count_visits_recursive(by_region_by_place(huts_enriched_with_trips())))
-    # print(count_visits_recursive(by_island_by_region_by_place(huts_enriched_with_trips())))
+    html = len(sys.argv) > 1 and sys.argv[1] == 'html'
+    newline = '<br/>' if html else '\n'
+    if html:
+        print(newline.join([
+            'Hut names are links to the DOC page for the hut (except for the few huts not in the official DOC list).',
+            'Some of the huts also have links to photos/blog posts/reports for the trip where I visited the hut.',
+            ]))
+        print(2 * newline)
+    for item in checklist(by_island_by_region_by_place(huts), html=html):
+        print(item)
+        if html:
+            print(newline)
