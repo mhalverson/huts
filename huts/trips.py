@@ -399,6 +399,24 @@ trips_raw = [
         TRIP_REPORTS: ['https://www.facebook.com/ivor.heijnen/posts/10157178046720908'],
         TRIP_PARTY: ['Dave Manning', 'Ivor Heijnen'],
     },
+    {
+        TRIP_START: date(2019, 4, 25),
+        TRIP_END: date(2019, 4, 25),
+        TRIP_DESC: 'Mt Somers',
+        # TRIP_REPORTS: [''],
+        TRIP_PARTY: ['Dave Manning'],
+    },
+
+    # {
+    #     TRIP_START: date(2019, ),
+    #     TRIP_END: date(2019, ),
+    #     TRIP_DESC: '',
+    #     TRIP_ABORTED: True,
+    #     TRIP_REPORTS: [''],
+    #     TRIP_PARTY: [],
+    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
+    #                 {HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u''},]
+    # },
 ]
 
 class Trip(object):
