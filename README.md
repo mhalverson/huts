@@ -52,10 +52,22 @@ omitted from the LayerControl.
 Regenerate the checklist and map files for the website with the following commands:
 
 ```
-PYTHONPATH=. python3 huts/checklist.py html > ../website/tramping/hut_checklist.html
+CHECKLIST=matt_checklist.html
+PYTHONPATH=. python3 huts/checklist.py html > ../website/tramping/$CHECKLIST
 PYTHONPATH=. python3 huts/map.py
-./xform_map_for_website.sh rendered_map.north_island.html north_island_checklist_data.js > ../website/tramping/north_island_hut_map.html
-cp checklist_data.north_island.js ../website/tramping/north_island_checklist_data.js
-./xform_map_for_website.sh rendered_map.south_island.html south_island_checklist_data.js > ../website/tramping/south_island_hut_map.html
-cp checklist_data.south_island.js ../website/tramping/south_island_checklist_data.js
+NORTH_ISLAND_MAP=north_island_matt_map.html
+SOUTH_ISLAND_MAP=south_island_matt_map.html
+NORTH_ISLAND_DATA=north_island_matt_data.js
+SOUTH_ISLAND_DATA=south_island_matt_data.js
+./xform_map_for_website.sh rendered_map.north_island.html $NORTH_ISLAND_DATA > ../website/tramping/$NORTH_ISLAND_MAP
+cp checklist_data.north_island.js ../website/tramping/$NORTH_ISLAND_DATA
+./xform_map_for_website.sh rendered_map.south_island.html $SOUTH_ISLAND_DATA > ../website/tramping/$SOUTH_ISLAND_MAP
+cp checklist_data.south_island.js ../website/tramping/$SOUTH_ISLAND_DATA
+```
+
+Update the dynamic build-your-own map data with the following commands:
+
+```
+PYTHONPATH=. python3 huts/dynamic_user_map.py
+mv encoded_hut_dict.js ../website/tramping/encoded_hut_dict.js
 ```
