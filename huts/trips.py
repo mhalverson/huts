@@ -389,7 +389,7 @@ trips_raw = [
         TRIP_PARTY: ['Dave Manning', 'Sophie Manning', 'Luca Manning',
                      'Lindsey Alton', 'Ivor Heijnen', 'Ashleigh Alton',
                      'Sam Kipling', 'Sophie Kipling', 'Anna Cousins', 'Nate Cousins'],
-        TRIP_HUTS: [{HUT_ARRIVAL: date(2019, 1, 23), HUT_SLEEP: True, HUT_NAME: 'Ōtamahua Hut'}],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2019, 1, 23), HUT_SLEEP: True, HUT_NAME: 'Otamahua Hut'}],
     },
     {
         TRIP_START: date(2019, 3, 2),
