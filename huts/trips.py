@@ -386,7 +386,8 @@ trips_raw = [
         TRIP_END: date(2019, 1, 24),
         TRIP_DESC: 'Ōtamahua/Quail Island',
         TRIP_REPORTS: ['https://drive.google.com/drive/folders/1-3WmupKlY8ad-YII4BXDRKGWP--kR1ae'],
-        TRIP_PARTY: ['Dave Manning', 'Sophie Manning', 'Luca Manning',
+        TRIP_PARTY: ['Claire Woolf',
+                     'Dave Manning', 'Sophie Manning', 'Luca Manning',
                      'Lindsey Alton', 'Ivor Heijnen', 'Ashleigh Alton',
                      'Sam Kipling', 'Sophie Kipling', 'Anna Cousins', 'Nate Cousins'],
         TRIP_HUTS: [{HUT_ARRIVAL: date(2019, 1, 23), HUT_SLEEP: True, HUT_NAME: 'Otamahua Hut'}],
@@ -403,19 +404,140 @@ trips_raw = [
         TRIP_START: date(2019, 4, 25),
         TRIP_END: date(2019, 4, 25),
         TRIP_DESC: 'Mt Somers',
-        # TRIP_REPORTS: [''],
+        # TRIP_REPORTS: [''], # TODO post my photos
         TRIP_PARTY: ['Dave Manning'],
     },
 
+     {
+         TRIP_START: date(2019, 6, 29),
+         TRIP_END: date(2019, 6, 30),
+         TRIP_DESC: 'Avoca Hut - Jordan / Sphinx',
+         # TRIP_REPORTS: [''], # TODO post my photos
+         TRIP_PARTY: ['Dave Manning'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2019, 6, 29), HUT_SLEEP: True, HUT_NAME: u'Avoca Hut'},
+                     {HUT_ARRIVAL: date(2019, 6, 30), HUT_SLEEP: False, HUT_NAME: u'Anti Crow Hut'},]
+     },
+
+     {
+         TRIP_START: date(2019, 9, 8),
+         TRIP_END: date(2019, 9, 9),
+         TRIP_DESC: 'Welcome Flat',
+         TRIP_REPORTS: ['https://www.facebook.com/photo/?fbid=10157426862991904&set=t.1045230044'], # TODO post my photos too
+         TRIP_PARTY: ['Claire Woolf', 'Derek Pell', 'Audrey Vorametsanti'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2019, 9, 8), HUT_SLEEP: True, HUT_NAME: u'Welcome Flat Hut'},]
+     },
+
+     {
+         TRIP_START: date(2019, 12, 7),
+         TRIP_END: date(2019, 12, 8),
+         TRIP_DESC: 'Pigeon Bay camping',
+         # TRIP_REPORTS: [''], # TODO post my photos
+         TRIP_PARTY: ['Claire Woolf', 'Alison Tang', 'Michael Coe'], # and a few others
+     },
+
+     {
+         TRIP_START: date(2020, 1, 11),
+         TRIP_END: date(2020, 1, 12),
+         TRIP_DESC: 'Mt Kerr/Lower Olderog',
+         # TRIP_REPORTS: [''], # TODO post my photos
+         TRIP_PARTY: ['Dave Manning', 'Ivor Heijnen'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 1, 11), HUT_SLEEP: True, HUT_NAME: u'Lower Olderog Bivvy'},]
+     },
+
+     {
+         TRIP_START: date(2020, 2, 6),
+         TRIP_END: date(2020, 2, 9),
+         TRIP_DESC: 'Hope/Doubtful/Nina over Waitangi',
+         # TRIP_REPORTS: [''], # TODO post my photos
+         TRIP_PARTY: ['Claire Woolf', 'Melanie LaPointe'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 2, 6), HUT_SLEEP: False, HUT_NAME: u'Hope Halfway Hut'},
+                     {HUT_ARRIVAL: date(2020, 2, 6), HUT_SLEEP: True, HUT_NAME: u"St Jacob's Hut"},
+                     {HUT_ARRIVAL: date(2020, 2, 7), HUT_SLEEP: False, HUT_NAME: u'Lake Man Bivvy'},
+                     {HUT_ARRIVAL: date(2020, 2, 7), HUT_SLEEP: True, HUT_NAME: u'Doubtless Hut'},
+                     {HUT_ARRIVAL: date(2020, 2, 8), HUT_SLEEP: False, HUT_NAME: u'Doubtful Hut'},
+                     {HUT_ARRIVAL: date(2020, 2, 8), HUT_SLEEP: False, HUT_NAME: u'Devils Den Bivvy'},
+                     {HUT_ARRIVAL: date(2020, 2, 8), HUT_SLEEP: True, HUT_NAME: u'Nina Hut'},]
+     },
+
+     {
+         TRIP_START: date(2020, 5, 1),
+         TRIP_END: date(2020, 5, 1),
+         TRIP_DESC: 'Mt Herbert',
+         # TRIP_REPORTS: [''], # TODO post my photos too
+         TRIP_PARTY: ['Claire Woolf'],
+     },
+
+     {
+         TRIP_START: date(2020, 5, 30),
+         TRIP_END: date(2020, 5, 31),
+         TRIP_DESC: "Dave's first tramp - reprise",
+         TRIP_REPORTS: ['https://www.facebook.com/photo/?fbid=10158489213023126&set=t.1045230044'], # TODO post my photos too
+         TRIP_PARTY: ['Dave Manning', 'Ivor Heijnen'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 5, 30), HUT_SLEEP: False, HUT_NAME: u'Brass Monkey Bivvy'},
+                     {HUT_ARRIVAL: date(2020, 5, 30), HUT_SLEEP: False, HUT_NAME: u'Lake Christabel Hut'},
+                     {HUT_ARRIVAL: date(2020, 5, 31), HUT_SLEEP: False, HUT_NAME: u'Upper Nina Bivvy'},]
+     },
+
+     {
+         TRIP_START: date(2020, 8, 21),
+         TRIP_END: date(2020, 8, 21),
+         TRIP_DESC: 'Kaituna Grande Loop',
+         TRIP_REPORTS: ['https://www.strava.com/activities/3943347600'],
+         TRIP_PARTY: ['Brian Thorne', 'Lindsey Alton'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 8, 21), HUT_SLEEP: False, HUT_NAME: u'Packhorse Hut'},]
+     },
+
+     {
+         TRIP_START: date(2020, 8, 22),
+         TRIP_END: date(2020, 8, 23),
+         TRIP_DESC: 'Bealey Spur amble',
+         # TRIP_REPORTS: [''], # TODO post my photos
+         TRIP_PARTY: ['Claire Woolf', 'Dave Manning', 'Sophie Manning', 'Luca Manning'],
+     },
+
+     {
+         TRIP_START: date(2020, 9, 12),
+         TRIP_END: date(2020, 9, 12),
+         TRIP_DESC: 'Mt Bealey / Avalanche Peak',
+         TRIP_REPORTS: ['https://www.facebook.com/mhhalverson/posts/10221460310310913'],
+         TRIP_PARTY: ['Ivor Heijnen'],
+     },
+
+     {
+         TRIP_START: date(2020, 9, 27),
+         TRIP_END: date(2020, 9, 30),
+         TRIP_DESC: 'Heaphy Track',
+         TRIP_REPORTS: ['https://photos.google.com/share/AF1QipM97c2HETJU2hI4KFcYN32lLDcnA5emhfaHYiKS5YsOnLcOlj8W4wwdiPZ1eISA9g?key=eUpUTmdHdm8ySXMtUVo2SEpyMjlGVHctS1pQMUV3'],
+         TRIP_PARTY: ['Claire Woolf', 'Kirstie McHale', 'Alison Tang', 'Emma Gavenda'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 9, 27), HUT_SLEEP: False, HUT_NAME: u'Brown Hut', HUT_REGION: 'Nelson/Tasman'},
+                     {HUT_ARRIVAL: date(2020, 9, 27), HUT_SLEEP: True, HUT_NAME: u'Perry Saddle Hut'},
+                     {HUT_ARRIVAL: date(2020, 9, 28), HUT_SLEEP: False, HUT_NAME: u'Gouland Downs Hut'},
+                     {HUT_ARRIVAL: date(2020, 9, 28), HUT_SLEEP: False, HUT_NAME: u'Saxon Hut'},
+                     {HUT_ARRIVAL: date(2020, 9, 28), HUT_SLEEP: True, HUT_NAME: u'James Mackay Hut'},
+                     {HUT_ARRIVAL: date(2020, 9, 29), HUT_SLEEP: False, HUT_NAME: u'Lewis Hut'},
+                     {HUT_ARRIVAL: date(2020, 9, 29), HUT_SLEEP: True, HUT_NAME: u'Heaphy Hut'},]
+     },
+
+     {
+         TRIP_START: date(2020, 10, 2),
+         TRIP_END: date(2020, 10, 5),
+         TRIP_DESC: 'Abel Tasman Coast Track',
+         TRIP_REPORTS: ['https://photos.google.com/share/AF1QipMsc7XLeuUwGCqMKlPjw3NhuMRZB29EET0DWilKESzmze5CE3xDrcYVXOYaPxjaLQ?key=a245WTBxT0h5OTdTT0xVTGlQMUZPcDBEOUpIMnhR'],
+         TRIP_PARTY: ['Claire Woolf', 'Stan Klevtsov', 'Alison Tang', 'Michael Coe'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 10, 2), HUT_SLEEP: True, HUT_NAME: u'Whariwharangi Hut'},
+                     {HUT_ARRIVAL: date(2020, 10, 3), HUT_SLEEP: True, HUT_NAME: u'Awaroa Hut'},
+                     {HUT_ARRIVAL: date(2020, 10, 4), HUT_SLEEP: True, HUT_NAME: u'Bark Bay Hut'},]
+     },
+
     # {
-    #     TRIP_START: date(2019, ),
-    #     TRIP_END: date(2019, ),
+    #     TRIP_START: date(2020, ),
+    #     TRIP_END: date(2020, ),
     #     TRIP_DESC: '',
     #     TRIP_ABORTED: True,
     #     TRIP_REPORTS: [''],
     #     TRIP_PARTY: [],
-    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
-    #                 {HUT_ARRIVAL: date(2019, ), HUT_SLEEP: , HUT_NAME: u''},]
+    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2020, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
+    #                 {HUT_ARRIVAL: date(2020, ), HUT_SLEEP: , HUT_NAME: u''},]
     # },
 ]
 
