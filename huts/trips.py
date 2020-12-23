@@ -529,6 +529,45 @@ trips_raw = [
                      {HUT_ARRIVAL: date(2020, 10, 4), HUT_SLEEP: True, HUT_NAME: u'Bark Bay Hut'},]
      },
 
+     {
+         TRIP_START: date(2020, 10, 17),
+         TRIP_END: date(2020, 10, 18),
+         TRIP_DESC: 'Ōtamahua/Quail Island',
+         TRIP_REPORTS: ['https://photos.google.com/share/AF1QipP5JBd7LfTYT-W4s1PYUWITEqLdgdw0_t6dHl2FfjF8PhuyQAjA52wBZbcRsF7HqA?key=UnVEWGg4UGVqNXg5b0VVaTB6Y0dzS1V5dld0UU1R&pli=1'],
+         TRIP_PARTY: ['Claire Woolf', 'Heather Penzel', 'Eve Russell',
+                     'Dave Manning', 'Sophie Manning', 'Luca Manning',
+                     'Lindsey Alton', 'Ashleigh Alton',
+                     'Brian Thorne', 'Sarah Thorne', 'Juliet Thorne', 'Frederick Thorne'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 10, 17), HUT_SLEEP: True, HUT_NAME: u'Otamahua Hut'},],
+     },
+
+     {
+         TRIP_START: date(2020, 12, 5),
+         TRIP_END: date(2020, 12, 5),
+         TRIP_DESC: 'Kepler Challenge 2020',
+         TRIP_REPORTS: [
+             'https://www.facebook.com/mhhalverson/posts/10222091021958310',
+             'http://matthalverson.com/2020/12/23/running.html',
+         ],
+         TRIP_PARTY: ['Sarah Bouckoms', 'Curtis Moore', 'Bev Thorne'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 12, 5), HUT_SLEEP: False, HUT_NAME: u'Luxmore Hut'},
+                     {HUT_ARRIVAL: date(2020, 12, 5), HUT_SLEEP: False, HUT_NAME: u'Moturau Hut'},],
+     },
+
+     {
+         TRIP_START: date(2020, 12, 14),
+         TRIP_END: date(2020, 12, 15),
+         TRIP_DESC: 'Milford Track / Dore Pass',
+         TRIP_REPORTS: [
+             'https://photos.app.goo.gl/Ymij1TVXSC8CNZd87',
+             'http://matthalverson.com/2020/12/23/running.html',
+             ],
+         TRIP_PARTY: ['Lindsey Alton', 'Ivor Heijnen'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 12, 14), HUT_SLEEP: False, HUT_NAME: u'Dumpling Hut'},
+                     {HUT_ARRIVAL: date(2020, 12, 14), HUT_SLEEP: False, HUT_NAME: u'Mintaro Hut'},
+                     {HUT_ARRIVAL: date(2020, 12, 14), HUT_SLEEP: False, HUT_NAME: u'Clinton Hut'},],
+     },
+
     # {
     #     TRIP_START: date(2020, ),
     #     TRIP_END: date(2020, ),
