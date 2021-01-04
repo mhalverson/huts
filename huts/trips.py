@@ -214,7 +214,7 @@ trips_raw = [
         TRIP_START: date(2010, 11, 15),
         TRIP_END: date(2010, 11, 16),
         TRIP_DESC: 'Rees/Dart Track',
-        TRIP_ABORTED: True,
+        TRIP_ABORTED: True,  # bad weather - rivers were flooded, snow on the pass IIRC
         TRIP_REPORTS: ['https://www.facebook.com/mhhalverson/timeline/story?ut=60&wstart=1262332800&wend=1293868799&hash=6550845421681570440&pagefilter=3'],
         TRIP_PARTY: ['Becky Le Lievre', 'Monique Eade', 'Sharon Hornblow', 'Martina Kratt'],
         TRIP_HUTS: [{HUT_ARRIVAL: date(2010, 11, 15), HUT_SLEEP: True, HUT_NAME: u'Shelter Rock Hut'}]
@@ -363,7 +363,7 @@ trips_raw = [
         TRIP_START: date(2018, 12, 5),
         TRIP_END: date(2018, 12, 7),
         TRIP_DESC: 'Ruahines - Longview Hut',
-        TRIP_ABORTED: True,
+        TRIP_ABORTED: True,  # extreme winds, spent two nights in the hut as we Claire was a bit shell shocked from the ascent up the spur
         TRIP_REPORTS: ['https://www.facebook.com/mhhalverson/posts/10216128029367222'],
         TRIP_PARTY: ['Claire Woolf'],
         TRIP_HUTS: [{HUT_ARRIVAL: date(2018, 12, 5), HUT_SLEEP: True, HUT_NAME: u'Longview Hut', HUT_MULTIPLE_NIGHTS: 2},]
@@ -396,7 +396,7 @@ trips_raw = [
         TRIP_START: date(2019, 3, 2),
         TRIP_END: date(2019, 3, 3),
         TRIP_DESC: 'Tara Tama',
-        TRIP_ABORTED: True,  # I camped on the ridge and didn't actually go up to Tara Tama
+        TRIP_ABORTED: True,  # I was feeling sick and threw up multiple times. Dave gave me all his water and I camped on the ridge and didn't actually go up to Tara Tama.
         TRIP_REPORTS: ['https://www.facebook.com/ivor.heijnen/posts/10157178046720908'],
         TRIP_PARTY: ['Dave Manning', 'Ivor Heijnen'],
     },
@@ -566,6 +566,30 @@ trips_raw = [
          TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 12, 14), HUT_SLEEP: False, HUT_NAME: u'Dumpling Hut'},
                      {HUT_ARRIVAL: date(2020, 12, 14), HUT_SLEEP: False, HUT_NAME: u'Mintaro Hut'},
                      {HUT_ARRIVAL: date(2020, 12, 14), HUT_SLEEP: False, HUT_NAME: u'Clinton Hut'},],
+     },
+
+     {
+         TRIP_START: date(2020, 12, 27),
+         TRIP_END: date(2020, 12, 27),
+         TRIP_DESC: 'Gertrude Saddle',
+         TRIP_REPORTS: [
+             'https://photos.google.com/share/AF1QipN2NCUMc5L6GhiSNqmsXbNBlh6fliKcMxgCwM8KuhtIo577-e8LiKFpat_cbuKf1w',
+             # TODO add my own link
+             ],
+         TRIP_PARTY: ['Brian Thorne', 'Sarah Thorne', 'Neville Thorne', 'Douglas Thorne', 'Jessica Thorne', 'Claire Woolf'],
+     },
+
+     {
+         TRIP_START: date(2020, 12, 29),
+         TRIP_END: date(2021, 1, 2),
+         TRIP_DESC: 'Stewart Island Southern Circuit',
+         TRIP_ABORTED: True,  # Claire was feeling extremely low energy so we turned back after the first day
+         # TRIP_REPORTS: [''], # TODO post my photos
+         TRIP_PARTY: ['Claire Woolf'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 12, 29), HUT_SLEEP: True, HUT_NAME: u'Freds Camp'},
+                     {HUT_ARRIVAL: date(2020, 12, 30), HUT_SLEEP: True, HUT_NAME: u'Rakeahua Hut'},
+                     {HUT_ARRIVAL: date(2020, 12, 31), HUT_SLEEP: True, HUT_NAME: u'Freds Camp'},
+                     {HUT_ARRIVAL: date(2021, 1, 1), HUT_SLEEP: True, HUT_NAME: u'Freds Camp'},],
      },
 
     # {
