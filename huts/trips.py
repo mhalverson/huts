@@ -592,6 +592,17 @@ trips_raw = [
                      {HUT_ARRIVAL: date(2021, 1, 1), HUT_SLEEP: True, HUT_NAME: u'Freds Camp'},],
      },
 
+     {
+         TRIP_START: date(2021, 1, 9),
+         TRIP_END: date(2021, 1, 9),
+         TRIP_DESC: 'Goat Pass',
+         # TRIP_REPORTS: [''], # TODO post my photos
+         TRIP_PARTY: ['Neil Campbell', 'Katherine Lydiard'], # also neil's friends Craig and Reuben and Katherine's friend Phil.
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 1, 9), HUT_SLEEP: False, HUT_NAME: u'Upper Deception Hut'},
+                     {HUT_ARRIVAL: date(2021, 1, 9), HUT_SLEEP: False, HUT_NAME: u'Goat Pass Hut'},
+                     {HUT_ARRIVAL: date(2021, 1, 9), HUT_SLEEP: False, HUT_NAME: u'Mingha Biv'},],
+     },
+
     # {
     #     TRIP_START: date(2020, ),
     #     TRIP_END: date(2020, ),
