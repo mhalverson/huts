@@ -586,10 +586,10 @@ trips_raw = [
          TRIP_ABORTED: True,  # Claire was feeling extremely low energy so we turned back after the first day
          # TRIP_REPORTS: [''], # TODO post my photos
          TRIP_PARTY: ['Claire Woolf'],
-         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 12, 29), HUT_SLEEP: True, HUT_NAME: u'Freds Camp'},
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 12, 29), HUT_SLEEP: True, HUT_NAME: u'Freds Camp Hut'},
                      {HUT_ARRIVAL: date(2020, 12, 30), HUT_SLEEP: True, HUT_NAME: u'Rakeahua Hut'},
-                     {HUT_ARRIVAL: date(2020, 12, 31), HUT_SLEEP: True, HUT_NAME: u'Freds Camp'},
-                     {HUT_ARRIVAL: date(2021, 1, 1), HUT_SLEEP: True, HUT_NAME: u'Freds Camp'},],
+                     {HUT_ARRIVAL: date(2020, 12, 31), HUT_SLEEP: True, HUT_NAME: u'Freds Camp Hut'},
+                     {HUT_ARRIVAL: date(2021, 1, 1), HUT_SLEEP: True, HUT_NAME: u'Freds Camp Hut'},],
      },
 
      {
@@ -600,7 +600,7 @@ trips_raw = [
          TRIP_PARTY: ['Neil Campbell', 'Katherine Lydiard'], # also neil's friends Craig and Reuben and Katherine's friend Phil.
          TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 1, 9), HUT_SLEEP: False, HUT_NAME: u'Upper Deception Hut'},
                      {HUT_ARRIVAL: date(2021, 1, 9), HUT_SLEEP: False, HUT_NAME: u'Goat Pass Hut'},
-                     {HUT_ARRIVAL: date(2021, 1, 9), HUT_SLEEP: False, HUT_NAME: u'Mingha Biv'},],
+                     {HUT_ARRIVAL: date(2021, 1, 9), HUT_SLEEP: False, HUT_NAME: u'Mingha Bivvy'},],
      },
 
     # {
