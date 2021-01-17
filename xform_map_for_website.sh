@@ -21,10 +21,21 @@ last_line=$(wc -l "$raw_map" | awk '{print $1}')
 # put it all together
 cat "$raw_map" | head -n $(($insert_script_line - 1))
 echo "    <script src=\"$js_file\"></script>"
+echo '    <!-- Global site tag (gtag.js) - Google Analytics -->'
+echo '    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139615802-1"></script>'
+echo '    <script>'
+echo '      window.dataLayer = window.dataLayer || [];'
+echo '      function gtag(){dataLayer.push(arguments);}'
+echo "      gtag('js', new Date());"
+echo "      gtag('config', 'UA-139615802-1');"
+echo '    </script>'
+echo "    <title>Hut map</title>"
 cat "$raw_map" | tail -n +$(($insert_script_line)) | head -n $(($map_style_start_line - $insert_script_line + 1))
 echo '        position: fixed;'
 echo '        width: 70.0%;'
 cat "$raw_map" | tail -n +$(($map_style_start_line + 3)) | head -n $(($map_style_end_offset - 3))
+echo '    <link rel="stylesheet" href="/assets/css/styles.css">'
+echo '    <style>body{max-width: unset; margin-left: unset;}</style>'
 echo '    <style>#summaryzone{margin-left: 70%; padding-left: 5px;}</style>'
 cat "$raw_map" | tail -n +$(($map_style_end_line + 1)) | head -n $(($map_div_line - $map_style_end_line - 1))
 echo "    <div class=\"folium-map\" id=\"${map_identifier}\"></div>"

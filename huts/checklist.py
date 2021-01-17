@@ -171,7 +171,29 @@ if __name__ == '__main__':
 
     html = len(sys.argv) > 1 and sys.argv[1] == 'html'
     if html:
+        print('''
+<!doctype html>
+<html>
+    <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139615802-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-139615802-1');
+        </script>
+        <meta charset="utf-8"/>
+        <title>Hut checklist</title>
+        <link rel="stylesheet" href="/assets/css/styles.css">
+    </head>
+    <body>
+        ''')
         print(header(html))
         print(2 * newline(html))
     for item in checklist(by_island_by_region_by_place(huts), html=html):
         print(item)
+    if html:
+        print('''
+    </body>
+</html>
+        ''')
