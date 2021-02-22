@@ -23,8 +23,8 @@ HUT_IS_DOC_MAINTAINED = 'hut_is_doc_maintained' # bool, if it's not maintained b
 
 template = '''
     {
-        TRIP_START: date(2019, ),
-        TRIP_END: date(2019, ),
+        TRIP_START: date(2021, ),
+        TRIP_END: date(2021, ),
         TRIP_DESC: '',
         TRIP_ABORTED: True,
         TRIP_REPORTS: [''],
@@ -597,10 +597,29 @@ trips_raw = [
          TRIP_END: date(2021, 1, 9),
          TRIP_DESC: 'Goat Pass',
          # TRIP_REPORTS: [''], # TODO post my photos
-         TRIP_PARTY: ['Neil Campbell', 'Katherine Lydiard'], # also neil's friends Craig and Reuben and Katherine's friend Phil.
+         TRIP_PARTY: ['Neil Campbell', 'Katherine Lydiard', 'Craig Muir', 'Reuben Costello'], # also Katherine's friend Phil.
          TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 1, 9), HUT_SLEEP: False, HUT_NAME: u'Upper Deception Hut'},
                      {HUT_ARRIVAL: date(2021, 1, 9), HUT_SLEEP: False, HUT_NAME: u'Goat Pass Hut'},
                      {HUT_ARRIVAL: date(2021, 1, 9), HUT_SLEEP: False, HUT_NAME: u'Mingha Bivvy'},],
+     },
+
+     {
+         TRIP_START: date(2021, 1, 22),
+         TRIP_END: date(2021, 1, 24),
+         TRIP_DESC: 'Summit Walkway',
+         # TRIP_REPORTS: [''], # TODO post my photos
+         TRIP_PARTY: ['Claire Woolf', 'Kirstie McHale', 'Arthur Gordon-Wright', 'Thomas Caspari', 'Nina Koele', 'Brian Thorne', 'Juliet Thorne'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 1, 22), HUT_SLEEP: True, HUT_NAME: u'Packhorse Hut'},
+                     {HUT_ARRIVAL: date(2021, 1, 23), HUT_SLEEP: True, HUT_NAME: u'Rod Donald Hut'}],
+     },
+
+     {
+         TRIP_START: date(2021, 2, 20),
+         TRIP_END: date(2021, 2, 21),
+         TRIP_DESC: 'Mt Brown Hut',
+         # TRIP_REPORTS: [''], # TODO post my photos
+         TRIP_PARTY: ['Dave Manning', 'Pete Russell'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 2, 20), HUT_SLEEP: True, HUT_NAME: u'Mt Brown Hut'}],
      },
 
     # {
