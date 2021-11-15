@@ -622,15 +622,46 @@ trips_raw = [
          TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 2, 20), HUT_SLEEP: True, HUT_NAME: u'Mt Brown Hut'}],
      },
 
+    {
+        TRIP_START: date(2021, 4, 9),
+        TRIP_END: date(2021, 4, 10),
+        TRIP_DESC: 'Old Ghost Road',
+        # TRIP_REPORTS: [''], # TODO post my photos
+        TRIP_PARTY: ['Dave Manning', 'Damian Philipsen'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 4, 9), HUT_SLEEP: False, HUT_NAME: u'Ogr - Lyell Saddle Hut'},
+                    {HUT_ARRIVAL: date(2021, 4, 9), HUT_SLEEP: True, HUT_NAME: u'Ogr - Ghost Lake Hut'},
+                    {HUT_ARRIVAL: date(2021, 4, 10), HUT_SLEEP: False, HUT_NAME: u'Ogr - Stern Valley Hut'},
+                    {HUT_ARRIVAL: date(2021, 4, 10), HUT_SLEEP: False, HUT_NAME: u'Ogr - Mokihinui Forks Hut'},
+                    {HUT_ARRIVAL: date(2021, 4, 10), HUT_SLEEP: False, HUT_NAME: u'Goat Creek Hut'},
+                    {HUT_ARRIVAL: date(2021, 4, 10), HUT_SLEEP: False, HUT_NAME: u'Ogr - Specimen Point Hut'},]
+    },
+
+    {
+        TRIP_START: date(2021, 10, 22),
+        TRIP_END: date(2021, 10, 24),
+        TRIP_DESC: 'Mt Owen and surrounds',
+        # TRIP_REPORTS: [''], # TODO post my photos
+        TRIP_PARTY: ['Wouter van Beerschoten'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 10, 23), HUT_SLEEP: True, HUT_NAME: u'Granity Pass Hut',},]
+    },
+
+    {
+        TRIP_START: date(2021, 11, 12),
+        TRIP_END: date(2021, 11, 12),
+        TRIP_DESC: 'Mt Fyffe run',
+        TRIP_REPORTS: ['https://www.strava.com/activities/6245917387'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 11, 12), HUT_SLEEP: False, HUT_NAME: u'Mt Fyffe Hut',},]
+    },
+
     # {
-    #     TRIP_START: date(2020, ),
-    #     TRIP_END: date(2020, ),
+    #     TRIP_START: date(2021, ),
+    #     TRIP_END: date(2021, ),
     #     TRIP_DESC: '',
     #     TRIP_ABORTED: True,
     #     TRIP_REPORTS: [''],
     #     TRIP_PARTY: [],
-    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2020, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
-    #                 {HUT_ARRIVAL: date(2020, ), HUT_SLEEP: , HUT_NAME: u''},]
+    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2021, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
+    #                 {HUT_ARRIVAL: date(2021, ), HUT_SLEEP: , HUT_NAME: u''},]
     # },
 ]
 
