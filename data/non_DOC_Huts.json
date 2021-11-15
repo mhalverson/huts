@@ -25,5 +25,50 @@
 	"lng": 172.694178,
 	"lat": -43.628060,
 	"staticLink": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/otamahua-quail-island-recreation-reserve/things-to-do/otamahua-hut/"
+    },
+    {
+        "name": "Lyell Saddle Hut",
+	"place": "Lyell area",
+	"region": "West Coast",
+	"island": "South Island",
+	"lng": 172.0992620789648,
+	"lat": -41.72383831440516,
+	"staticLink": "https://oldghostroad.org.nz/hut-information-3/"
+    },
+    {
+        "name": "Ghost Lake Hut",
+	"place": "Lyell area",
+	"region": "West Coast",
+	"island": "South Island",
+	"lng": 172.15907352684346,
+	"lat": -41.69998169633349,
+	"staticLink": "https://oldghostroad.org.nz/hut-information-3/"
+    },
+    {
+        "name": "Stern Valley Hut",
+	"place": "Mokihinui River area",
+	"region": "West Coast",
+	"island": "South Island",
+	"lng": 172.1988603850838,
+	"lat": -41.66363422620998,
+	"staticLink": "https://oldghostroad.org.nz/hut-information-3/"
+    },
+    {
+        "name": "Mokihinui Forks Hut",
+	"place": "Mokihinui River area",
+	"region": "West Coast",
+	"island": "South Island",
+	"lng": 172.1786571781745,
+	"lat": -41.548181749306046,
+	"staticLink": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/west-coast/places/mokihinui-river-area/things-to-do/huts/mokihinui-forks-hut/"
+    },
+    {
+        "name": "Specimen Point Hut",
+	"place": "Mokihinui River area",
+	"region": "West Coast",
+	"island": "South Island",
+	"lng": 172.1522164483528,
+	"lat": -41.54470219386695,
+	"staticLink": "https://oldghostroad.org.nz/hut-information-3/"
     }
 ]

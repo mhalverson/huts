@@ -628,12 +628,12 @@ trips_raw = [
         TRIP_DESC: 'Old Ghost Road',
         # TRIP_REPORTS: [''], # TODO post my photos
         TRIP_PARTY: ['Dave Manning', 'Damian Philipsen'],
-        TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 4, 9), HUT_SLEEP: False, HUT_NAME: u'Ogr - Lyell Saddle Hut'},
-                    {HUT_ARRIVAL: date(2021, 4, 9), HUT_SLEEP: True, HUT_NAME: u'Ogr - Ghost Lake Hut'},
-                    {HUT_ARRIVAL: date(2021, 4, 10), HUT_SLEEP: False, HUT_NAME: u'Ogr - Stern Valley Hut'},
-                    {HUT_ARRIVAL: date(2021, 4, 10), HUT_SLEEP: False, HUT_NAME: u'Ogr - Mokihinui Forks Hut'},
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 4, 9), HUT_SLEEP: False, HUT_NAME: u'Lyell Saddle Hut'},
+                    {HUT_ARRIVAL: date(2021, 4, 9), HUT_SLEEP: True, HUT_NAME: u'Ghost Lake Hut'},
+                    {HUT_ARRIVAL: date(2021, 4, 10), HUT_SLEEP: False, HUT_NAME: u'Stern Valley Hut'},
+                    {HUT_ARRIVAL: date(2021, 4, 10), HUT_SLEEP: False, HUT_NAME: u'Mokihinui Forks Hut'},
                     {HUT_ARRIVAL: date(2021, 4, 10), HUT_SLEEP: False, HUT_NAME: u'Goat Creek Hut'},
-                    {HUT_ARRIVAL: date(2021, 4, 10), HUT_SLEEP: False, HUT_NAME: u'Ogr - Specimen Point Hut'},]
+                    {HUT_ARRIVAL: date(2021, 4, 10), HUT_SLEEP: False, HUT_NAME: u'Specimen Point Hut'},]
     },
 
     {
