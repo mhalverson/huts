@@ -653,16 +653,62 @@ trips_raw = [
         TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 11, 12), HUT_SLEEP: False, HUT_NAME: u'Mt Fyffe Hut',},]
     },
 
+    {
+         TRIP_START: date(2021, 1, 15),
+         TRIP_END: date(2021, 1, 15),
+         TRIP_DESC: 'Kepler Challenge 2021 (2022)',
+         TRIP_REPORTS: [
+             'https://www.facebook.com/mhhalverson/posts/pfbid038DYgeP21ksnEGcdqYwncxBtEyJZo7BCoygnm2rAMF9apWjBPTaufpfW7x5fBpAQMl',
+             'https://www.strava.com/activities/6535272146',
+         ],
+         TRIP_PARTY: ['Christian Ruegg', 'Neville Thorne', 'Bev Thorne'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 1, 15), HUT_SLEEP: False, HUT_NAME: u'Luxmore Hut'},
+                     {HUT_ARRIVAL: date(2021, 1, 15), HUT_SLEEP: False, HUT_NAME: u'Iris Burn Hut'},
+                     {HUT_ARRIVAL: date(2021, 1, 15), HUT_SLEEP: False, HUT_NAME: u'Moturau Hut'},],
+     },
+
+    {
+        TRIP_START: date(2022, 2, 18),
+        TRIP_END: date(2022, 2, 18),
+        TRIP_DESC: 'Old Ghost Ultra (DIY)',
+        TRIP_REPORTS: ['https://www.strava.com/activities/6700398178'],
+        TRIP_PARTY: ['Mark Hebberd', 'Mike McManaway'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 4, 18), HUT_SLEEP: False, HUT_NAME: u'Specimen Point Hut'},
+                    {HUT_ARRIVAL: date(2022, 2, 18), HUT_SLEEP: False, HUT_NAME: u'Goat Creek Hut'},
+                    {HUT_ARRIVAL: date(2022, 2, 18), HUT_SLEEP: False, HUT_NAME: u'Mokihinui Forks Hut'},
+                    {HUT_ARRIVAL: date(2022, 2, 18), HUT_SLEEP: False, HUT_NAME: u'Stern Valley Hut'},
+                    {HUT_ARRIVAL: date(2022, 2, 18), HUT_SLEEP: False, HUT_NAME: u'Ghost Lake Hut'},
+                    {HUT_ARRIVAL: date(2022, 2, 18), HUT_SLEEP: False, HUT_NAME: u'Lyell Saddle Hut'},],
+    },
+
+    {
+        TRIP_START: date(2022, 3, 19),
+        TRIP_END: date(2022, 3, 19),
+        TRIP_DESC: 'Diamond in the Rough',
+        TRIP_REPORTS: ['https://www.strava.com/activities/6846203113'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 3, 19), HUT_SLEEP: False, HUT_NAME: u'Sylvester Hut'},],
+    },
+
+    {
+        TRIP_START: date(2022, 3, 20),
+        TRIP_END: date(2022, 3, 20),
+        TRIP_DESC: 'The Rameka to Pigeon Dance',
+        TRIP_REPORTS: ['https://www.strava.com/activities/6851363451'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 3, 20), HUT_SLEEP: False, HUT_NAME: u'Wainui Hut',},
+                    {HUT_ARRIVAL: date(2022, 3, 20), HUT_SLEEP: False, HUT_NAME: u'Awapoto Hut'},]
+    },
+
     # {
-    #     TRIP_START: date(2021, ),
-    #     TRIP_END: date(2021, ),
+    #     TRIP_START: date(2022, ),
+    #     TRIP_END: date(2022, ),
     #     TRIP_DESC: '',
     #     TRIP_ABORTED: True,
     #     TRIP_REPORTS: [''],
     #     TRIP_PARTY: [],
-    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2021, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
-    #                 {HUT_ARRIVAL: date(2021, ), HUT_SLEEP: , HUT_NAME: u''},]
+    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2022, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
+    #                 {HUT_ARRIVAL: date(2022, ), HUT_SLEEP: , HUT_NAME: u''},]
     # },
+
 ]
 
 class Trip(object):
