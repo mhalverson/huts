@@ -189,7 +189,7 @@ trips_raw = [
                     ]
     },
     # Hollyford UCCC trip (2010 Sep ?2? - ?4?) https://www.facebook.com/mhhalverson/media_set?set=a.1554515216549&type=3
-    # (failed) Lake Man Biv (2010 Sep 13 - 14) none, Sophie and I just camped in the shelter at the road-end :)
+    # (failed) Lake Man Biv (2010 Sep 13 - 14) none, Sophie and I just camped in the shelter at the Windy Point carpark :)
     {
         TRIP_START: date(2010, 10, 23),
         TRIP_END: date(2010, 10, 24),
@@ -547,7 +547,7 @@ trips_raw = [
          TRIP_DESC: 'Kepler Challenge 2020',
          TRIP_REPORTS: [
              'https://www.facebook.com/mhhalverson/posts/10222091021958310',
-             'http://matthalverson.com/2020/12/23/running.html',
+             'https://matthalverson.com/2020/12/23/running.html',
          ],
          TRIP_PARTY: ['Sarah Bouckoms', 'Curtis Moore', 'Bev Thorne'],
          TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 12, 5), HUT_SLEEP: False, HUT_NAME: u'Luxmore Hut'},
@@ -560,7 +560,7 @@ trips_raw = [
          TRIP_DESC: 'Milford Track / Dore Pass',
          TRIP_REPORTS: [
              'https://photos.app.goo.gl/Ymij1TVXSC8CNZd87',
-             'http://matthalverson.com/2020/12/23/running.html',
+             'https://matthalverson.com/2020/12/23/running.html',
              ],
          TRIP_PARTY: ['Lindsey Alton', 'Ivor Heijnen'],
          TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 12, 14), HUT_SLEEP: False, HUT_NAME: u'Dumpling Hut'},
@@ -621,6 +621,15 @@ trips_raw = [
          TRIP_PARTY: ['Dave Manning', 'Pete Russell'],
          TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 2, 20), HUT_SLEEP: True, HUT_NAME: u'Mt Brown Hut'}],
      },
+
+    {
+        TRIP_START: date(2021, 4, 4),
+        TRIP_END: date(2021, 4, 4),
+        TRIP_DESC: 'Lucretia Biv Reno',
+        # TRIP_REPORTS: [''], # TODO post my photos
+        TRIP_PARTY: ['Lindsey Alton', 'Ivor Heijnen', 'Ashleigh Alton'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2021, 4, 4), HUT_SLEEP: True, HUT_NAME: u'Lucretia Hut'},],
+    },
 
     {
         TRIP_START: date(2021, 4, 9),
@@ -696,6 +705,16 @@ trips_raw = [
         TRIP_REPORTS: ['https://www.strava.com/activities/6851363451'],
         TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 3, 20), HUT_SLEEP: False, HUT_NAME: u'Wainui Hut',},
                     {HUT_ARRIVAL: date(2022, 3, 20), HUT_SLEEP: False, HUT_NAME: u'Awapoto Hut'},]
+    },
+
+    {
+        TRIP_START: date(2022, 4, 23),
+        TRIP_END: date(2022, 4, 24),
+        TRIP_DESC: 'Lake Man via Doubtful Tops',
+        TRIP_REPORTS: ['https://matthalverson.com/2022/05/16/doubtful-tops.html'],
+        TRIP_PARTY: ['Dave Manning', 'Pete Russell'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 4, 23), HUT_SLEEP: True, HUT_NAME: u'Lake Man Bivvy',},
+                    {HUT_ARRIVAL: date(2022, 4, 24), HUT_SLEEP: False, HUT_NAME: u'Doubtful Hut'},]
     },
 
     # {
