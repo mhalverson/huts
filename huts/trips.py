@@ -717,6 +717,24 @@ trips_raw = [
                     {HUT_ARRIVAL: date(2022, 4, 24), HUT_SLEEP: False, HUT_NAME: u'Doubtful Hut'},]
     },
 
+    {
+        TRIP_START: date(2022, 6, 18),
+        TRIP_END: date(2022, 6, 18),
+        TRIP_DESC: 'Bealey Spur',
+        # TRIP_REPORTS: [''], # TODO post my photos
+        TRIP_PARTY: ['Sophie Manning'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 6, 18), HUT_SLEEP: False, HUT_NAME: u'Bealey Spur Hut',},]
+    },
+
+    {
+        TRIP_START: date(2022, 6, 25),
+        TRIP_END: date(2022, 6, 26),
+        TRIP_DESC: 'Mt Fyffe Cheesefest',
+        # TRIP_REPORTS: [''], # TODO post my photos
+        TRIP_PARTY: ['Christian Ruegg', 'Neil Whiteside', 'Lyndsay Fenn'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 6, 25), HUT_SLEEP: True, HUT_NAME: u'Mt Fyffe Hut',},]
+    },
+
     # {
     #     TRIP_START: date(2022, ),
     #     TRIP_END: date(2022, ),
