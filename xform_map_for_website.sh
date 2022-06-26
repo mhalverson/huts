@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 raw_map=$1; shift
 js_file=$1; shift
 
@@ -7,10 +9,10 @@ js_file=$1; shift
 insert_script_line=$(grep -n '\<link ' "$raw_map" | head -n 1 | cut -d : -f 1)
 
 # find the identifier for the map: the first style describing the map proportions
-map_identifier=$(egrep '\<style>#map_[a-zA-Z0-9]+ \{' "$raw_map" | egrep -o 'map_[a-zA-Z0-9]+')
+map_identifier=$(egrep 'map_[a-zA-Z0-9]+ \{' "$raw_map" | egrep -o 'map_[a-zA-Z0-9]+')
 
 # alter the width and left
-map_style_start_line=$(egrep -n '\<style>#map_[a-zA-Z0-9]+ \{' "$raw_map" | head -n 1 | cut -d : -f 1)
+map_style_start_line=$(egrep -n '#map_[a-zA-Z0-9]+ \{' "$raw_map" | head -n 1 | cut -d : -f 1)
 # assume the next two lines are 'position' and 'width'
 map_style_end_offset=$(tail -n +$map_style_start_line "$raw_map" | grep -n '</style>' | head -n 1 | cut -d : -f 1)
 map_style_end_line=$(($map_style_start_line + $map_style_end_offset - 1))
