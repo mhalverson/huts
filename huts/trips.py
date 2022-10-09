@@ -735,6 +735,19 @@ trips_raw = [
         TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 6, 25), HUT_SLEEP: True, HUT_NAME: u'Mt Fyffe Hut',},]
     },
 
+    {
+        TRIP_START: date(2022, 10, 9),
+        TRIP_END: date(2022, 10, 9),
+        TRIP_DESC: 'Cass-Lagoon run',
+        TRIP_REPORTS: ['https://www.strava.com/activities/7933856916'],
+        TRIP_PARTY: ['Christian Ruegg', 'Dylan Steeples'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 10, 9), HUT_SLEEP: False, HUT_NAME: u'Lagoon Saddle A Frame Hut',},
+                    {HUT_ARRIVAL: date(2022, 10, 9), HUT_SLEEP: False, HUT_NAME: u'Lagoon Saddle Hut',},
+                    {HUT_ARRIVAL: date(2022, 10, 9), HUT_SLEEP: False, HUT_NAME: u'West Harper Hut',},
+                    {HUT_ARRIVAL: date(2022, 10, 9), HUT_SLEEP: False, HUT_NAME: u'Hamilton Hut',},
+                    {HUT_ARRIVAL: date(2022, 10, 9), HUT_SLEEP: False, HUT_NAME: u'Cass Saddle Hut',}, ]
+    },
+
     # {
     #     TRIP_START: date(2022, ),
     #     TRIP_END: date(2022, ),
