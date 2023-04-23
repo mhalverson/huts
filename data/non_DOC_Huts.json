@@ -18,15 +18,6 @@
 	"staticLink": "https://tramper.nz/16884/robin-saddle-hut/"
     },
     {
-        "name": "Otamahua Hut",
-	"place": "Banks Peninsula area",
-	"region": "Canterbury",
-	"island": "South Island",
-	"lng": 172.694178,
-	"lat": -43.628060,
-	"staticLink": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/otamahua-quail-island-recreation-reserve/things-to-do/otamahua-hut/"
-    },
-    {
         "name": "Lyell Saddle Hut",
 	"place": "Lyell area",
 	"region": "West Coast",
@@ -54,15 +45,6 @@
 	"staticLink": "https://oldghostroad.org.nz/hut-information-3/"
     },
     {
-        "name": "Mokihinui Forks Hut",
-	"place": "Mokihinui River area",
-	"region": "West Coast",
-	"island": "South Island",
-	"lng": 172.1786571781745,
-	"lat": -41.548181749306046,
-	"staticLink": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/west-coast/places/mokihinui-river-area/things-to-do/huts/mokihinui-forks-hut/"
-    },
-    {
         "name": "Specimen Point Hut",
 	"place": "Mokihinui River area",
 	"region": "West Coast",
@@ -70,5 +52,23 @@
 	"lng": 172.1522164483528,
 	"lat": -41.54470219386695,
 	"staticLink": "https://oldghostroad.org.nz/hut-information-3/"
+    },
+    {
+        "name": "Lake Howden Hut",
+	"place": "Lake Howden Hut",
+	"region": "Fiordland",
+	"island": "South Island",
+	"lng": 168.13546660090884,
+	"lat": -44.81570255101548,
+	"staticLink": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/huts/lake-howden-hut-closed/"
+    },
+    {
+        "name": "Lewis Hut",
+	"place": "Kahurangi National Park",
+	"region": "Nelson/Tasman",
+	"island": "South Island",
+	"lng": 172.14791346827298,
+	"lat": -40.94009881588973,
+	"staticLink": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/nelson-tasman/places/kahurangi-national-park/things-to-do/huts/lewis-shelter/"
     }
 ]

@@ -7,7 +7,7 @@ import folium
 
 from huts.hut import (
     north_island, south_island,
-    regions_north, regions_south, unknown_region,
+    regions_north, regions_south,
     unknown_place,
 )
 
@@ -84,7 +84,6 @@ def maps(huts_with_trip_data):
             regions = regions_south
         else:
             raise ValueError('unrecognized island: {}'.format(i))
-        regions.append(unknown_region)
 
         for r in filter(lambda r: r in regions_to_render, regions):
             fg_visited_in_region = folium.FeatureGroup(

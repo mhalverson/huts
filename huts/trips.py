@@ -174,16 +174,12 @@ trips_raw = [
         TRIP_PARTY: ['David Gombrii', 'Oli Weller', 'Monique Eade', 'Becky Le Lievre', 'Martina Kratt', 'Shannon Harley'],
         TRIP_HUTS: [{HUT_ARRIVAL: date(2010, 8, 21), HUT_SLEEP: True, HUT_NAME: u'Port William Hut'},
                     {HUT_ARRIVAL: date(2010, 8, 22), HUT_SLEEP: True, HUT_NAME: u'Bungaree Hut'},
-                    {HUT_ARRIVAL: date(2010, 8, 23), HUT_SLEEP: False, HUT_NAME: u'Murray Hunters Hut'},
-                    {HUT_ARRIVAL: date(2010, 8, 23), HUT_SLEEP: False, HUT_NAME: u'Christmas Village Hunters Hut - 2017'},
                     {HUT_ARRIVAL: date(2010, 8, 23), HUT_SLEEP: True, HUT_NAME: u'Christmas Village Hut'},
                     {HUT_ARRIVAL: date(2010, 8, 24), HUT_SLEEP: True, HUT_NAME: u'Yankee River Hut'},
-                    {HUT_ARRIVAL: date(2010, 8, 25), HUT_SLEEP: False, HUT_NAME: u'Smoky Hunters Hut'},
                     {HUT_ARRIVAL: date(2010, 8, 25), HUT_SLEEP: False, HUT_NAME: u'Long Harry Hut'},
                     {HUT_ARRIVAL: date(2010, 8, 25), HUT_SLEEP: True, HUT_NAME: u'East Ruggedy Hut', HUT_MULTIPLE_NIGHTS: 2},
                     {HUT_ARRIVAL: date(2010, 8, 27), HUT_SLEEP: True, HUT_NAME: u'Big Hellfire Hut'},
                     {HUT_ARRIVAL: date(2010, 8, 28), HUT_SLEEP: True, HUT_NAME: u'Mason Bay Hut'},
-                    {HUT_ARRIVAL: date(2010, 8, 29), HUT_SLEEP: False, HUT_NAME: u'Homestead Hunters Hut'},
                     {HUT_ARRIVAL: date(2010, 8, 29), HUT_SLEEP: True, HUT_NAME: u'Freshwater Hut'},
                     {HUT_ARRIVAL: date(2010, 8, 30), HUT_SLEEP: False, HUT_NAME: u'North Arm Hut'},
                     ]
@@ -357,7 +353,7 @@ trips_raw = [
         TRIP_REPORTS: ['https://www.facebook.com/mhhalverson/posts/10216058013536870'],
         TRIP_PARTY: ['Claire Woolf'],
         TRIP_HUTS: [{HUT_ARRIVAL: date(2018, 12, 2), HUT_SLEEP: True, HUT_NAME: u'John Coull Hut'},
-                    {HUT_ARRIVAL: date(2018, 12, 3), HUT_SLEEP: True, HUT_NAME: u'Tieke Kainga'},]
+                    {HUT_ARRIVAL: date(2018, 12, 3), HUT_SLEEP: True, HUT_NAME: u'Tīeke Marae/kāinga'},]
     },
     {
         TRIP_START: date(2018, 12, 5),
@@ -378,7 +374,7 @@ trips_raw = [
                     {HUT_ARRIVAL: date(2018, 12, 9), HUT_SLEEP: True, HUT_NAME: u'Anderson Memorial Hut'},
                     {HUT_ARRIVAL: date(2018, 12, 10), HUT_SLEEP: True, HUT_NAME: u'Maungahuka Hut'},
                     {HUT_ARRIVAL: date(2018, 12, 11), HUT_SLEEP: True, HUT_NAME: u'Kime Hut'},
-                    {HUT_ARRIVAL: date(2018, 12, 12), HUT_SLEEP: False, HUT_NAME: u'Field Hut (Historic)'},
+                    {HUT_ARRIVAL: date(2018, 12, 12), HUT_SLEEP: False, HUT_NAME: u'Field Hut'},
                     ]
     },
     {
@@ -390,7 +386,7 @@ trips_raw = [
                      'Dave Manning', 'Sophie Manning', 'Luca Manning',
                      'Lindsey Alton', 'Ivor Heijnen', 'Ashleigh Alton',
                      'Sam Kipling', 'Sophie Kipling', 'Anna Cousins', 'Nate Cousins'],
-        TRIP_HUTS: [{HUT_ARRIVAL: date(2019, 1, 23), HUT_SLEEP: True, HUT_NAME: 'Otamahua Hut'}],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2019, 1, 23), HUT_SLEEP: True, HUT_NAME: 'Ōtamahua Hut'}],
     },
     {
         TRIP_START: date(2019, 3, 2),
@@ -538,7 +534,7 @@ trips_raw = [
                      'Dave Manning', 'Sophie Manning', 'Luca Manning',
                      'Lindsey Alton', 'Ashleigh Alton',
                      'Brian Thorne', 'Sarah Thorne', 'Juliet Thorne', 'Frederick Thorne'],
-         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 10, 17), HUT_SLEEP: True, HUT_NAME: u'Otamahua Hut'},],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2020, 10, 17), HUT_SLEEP: True, HUT_NAME: u'Ōtamahua Hut'},],
      },
 
      {
@@ -741,7 +737,8 @@ trips_raw = [
         TRIP_DESC: 'Cass-Lagoon run',
         TRIP_REPORTS: ['https://www.strava.com/activities/7933856916'],
         TRIP_PARTY: ['Christian Ruegg', 'Dylan Steeples'],
-        TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 10, 9), HUT_SLEEP: False, HUT_NAME: u'Lagoon Saddle A Frame Hut',},
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 10, 9), HUT_SLEEP: False, HUT_NAME: u'Bealey Hut',},
+                    {HUT_ARRIVAL: date(2022, 10, 9), HUT_SLEEP: False, HUT_NAME: u'Lagoon Saddle A Frame Hut',},
                     {HUT_ARRIVAL: date(2022, 10, 9), HUT_SLEEP: False, HUT_NAME: u'Lagoon Saddle Hut',},
                     {HUT_ARRIVAL: date(2022, 10, 9), HUT_SLEEP: False, HUT_NAME: u'West Harper Hut',},
                     {HUT_ARRIVAL: date(2022, 10, 9), HUT_SLEEP: False, HUT_NAME: u'Hamilton Hut',},

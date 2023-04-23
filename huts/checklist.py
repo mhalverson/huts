@@ -3,7 +3,7 @@ Utility for creating checklists of which huts have/haven't been visited.
 '''
 from collections import defaultdict
 
-from huts.hut import STATUS_OPEN, island_order, region_order, place_order
+from huts.hut import island_order, region_order, place_order
 
 
 def newline(html):
@@ -131,8 +131,6 @@ def checklist_recursive(huts_by_category, indent, sort_fn, html):
                 checkbox_string = ''
                 if h.visited:
                     checkbox_string = '\u2611'  if html else '[X]'
-                elif h.status != STATUS_OPEN:
-                    checkbox_string = '\u2610' if html else '[-]'
                 else:
                     checkbox_string = '\u2610' if html else '[ ]'
                 name_string = h.render_name(html=html)
@@ -165,7 +163,7 @@ if __name__ == '__main__':
             by_all, by_island, by_region, by_place,
             by_island_by_region, by_region_by_place,
             by_island_by_region_by_place,
-            filter_open, filter_known_region_known_place,
+            filter_known_region_known_place,
     )
     huts = filter_known_region_known_place(huts_enriched_with_trips())
 

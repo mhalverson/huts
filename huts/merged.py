@@ -3,7 +3,6 @@ The all-important function: huts_enriched_with_trips(). Merges the data
 from all_huts() with the data from all_trips().
 
 Also exposes some functions for filtering huts:
-    filter_open,
     filter_known_region_known_place.
 
 Also exposes functions for hierarchically organizing the huts:
@@ -17,8 +16,7 @@ from collections import defaultdict
 
 from huts.hut import (
     all_huts,
-    island_order, region_order, unknown_region, place_order, unknown_place,
-    STATUS_OPEN,
+    island_order, region_order, place_order, unknown_place,
 )
 from huts.trips import all_trips
 
@@ -77,26 +75,20 @@ def by_island_by_region_by_place(huts):
         result[h.island][h.region][h.place].append(h)
     return result
 
-def filter_open(huts):
-    return list(filter(lambda h: h.status == STATUS_OPEN, huts))
-
 def filter_known_region_known_place(huts):
-    return list(filter(lambda h: h.region != unknown_region and h.place != unknown_place, huts))
+    return list(filter(lambda h: h.place != unknown_place, huts))
 
 def summary(huts):
     total = 0
     place = defaultdict(int)
     region = defaultdict(int)
-    status = defaultdict(int)
     for h in huts:
         total += 1
         place[h.place] += 1
         region[h.region] += 1
-        status[h.status] += 1
     return {'total': total,
             'place': place,
-            'region': region,
-            'status': status}
+            'region': region}
 
 
 if __name__ == '__main__':

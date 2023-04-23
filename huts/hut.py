@@ -14,8 +14,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DOC_HUTS_FILE = os.path.join(BASE_DIR, 'data', 'DOC_Huts.geojson')
 NON_DOC_HUTS_FILE = os.path.join(BASE_DIR, 'data', 'non_DOC_Huts.json')
 
-STATUS_OPEN = 'OPEN'
-
 
 unknown_place = u'Unknown place'
 
@@ -29,7 +27,7 @@ regions_north = [
     u'Central North Island',
     u'Taranaki',
     u'Manawatu/Whanganui',
-    u"Hawke's Bay",
+    u"Hawke’s Bay",
     u'Wairarapa',
     u'Wellington/Kapiti',
 ]
@@ -42,8 +40,7 @@ regions_south = [
     u'Fiordland',
     u'Southland',
 ]
-unknown_region = u'No region'
-region_order = regions_north + regions_south + [unknown_region]
+region_order = regions_north + regions_south
 
 north_island = 'North Island'
 south_island = 'South Island'
@@ -149,11 +146,10 @@ class Hut(object):
 
         h.name = props['name'].strip()
         h.place = props['place'] or unknown_place
-        h.region = props['region'] or unknown_region
+        h.region = props['region']
         h.lng = geom['coordinates'][0]
         h.lat = geom['coordinates'][1]
         h.island = _lookup_island(h.region, h.lat)
-        h.status = props['status']
         h.url = props['staticLink']
 
         h.doc_maintained = doc_maintained
