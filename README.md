@@ -64,10 +64,3 @@ cp checklist_data.north_island.js ../website/tramping/$NORTH_ISLAND_DATA
 ./xform_map_for_website.sh rendered_map.south_island.html $SOUTH_ISLAND_DATA > ../website/tramping/$SOUTH_ISLAND_MAP
 cp checklist_data.south_island.js ../website/tramping/$SOUTH_ISLAND_DATA
 ```
-
-Update the dynamic build-your-own map data with the following commands:
-
-```
-PYTHONPATH=. python3 huts/dynamic_user_map.py
-mv encoded_hut_dict.js ../website/tramping/encoded_hut_dict.js
-```
