@@ -745,15 +745,69 @@ trips_raw = [
                     {HUT_ARRIVAL: date(2022, 10, 9), HUT_SLEEP: False, HUT_NAME: u'Cass Saddle Hut',}, ]
     },
 
+    {
+        TRIP_START: date(2022, 12, 3),
+        TRIP_END: date(2022, 12, 3),
+        TRIP_DESC: 'Kepler Challenge 2022',
+        TRIP_REPORTS: ['https://www.strava.com/activities/8199892980',
+            'https://www.facebook.com/mhhalverson/posts/pfbid05zmKARKY71UKd6dymQqYqEaG37tqdTqsVa68jXwWincpkvuNNJ1i97Tc7JJB2vzWl',
+            'https://www.facebook.com/christian.eriounes/posts/pfbid02ZQkeWby4y54s2bc6tchJcamLmbdddR5q8NaKUf2WksGsUcU4UHLq9wDkdmpun8nGl',
+            'https://www.facebook.com/sarah.antarctica.9/posts/pfbid027WtvBWrQ2XTMrsYnFMTzZQLMyAwgH3VLrFBUuEbbjvEk7CKmTZz7RUvmhpAJ5c4Pl'],
+        TRIP_PARTY: ['Christian Ruegg', 'Sarah Bouckoms', 'Hector Plaza', 'Bev Thorne', 'Kevin Grimwood', 'Tim Ensor'],
+         TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 12, 3), HUT_SLEEP: False, HUT_NAME: u'Luxmore Hut'},
+                     {HUT_ARRIVAL: date(2022, 12, 3), HUT_SLEEP: False, HUT_NAME: u'Iris Burn Hut'},
+                     {HUT_ARRIVAL: date(2022, 12, 3), HUT_SLEEP: False, HUT_NAME: u'Moturau Hut'},],
+    },
+
+    {
+        TRIP_START: date(2022, 12, 9),
+        TRIP_END: date(2022, 12, 10),
+        TRIP_DESC: "Rod Donald Hut for Kirstie's birthday",
+        TRIP_REPORTS: ['https://www.strava.com/activities/8229537220'],
+        TRIP_PARTY: ['Claire Woolf', 'Jamie Halverson', 'Kirstie McHale', 'Arthur Gordon-Wright', 'Cecile Bourgignon', 'Eli Wolff', 'Ashlee', 'Brian Thorne', 'Sarah Thorne', 'Juliet Thorne', 'Frederick Thorne'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2022, 12, 9), HUT_SLEEP: True, HUT_NAME: u'Rod Donald Hut'},],
+    },
+
+    {
+        TRIP_START: date(2023, 1, 26),
+        TRIP_END: date(2023, 1, 28),
+        TRIP_DESC: 'Routeburn',
+        # TRIP_REPORTS: [''], # TODO post my photos
+        TRIP_PARTY: ['Claire Woolf', 'Jamie Halverson', 'Bev Thorne', 'Brian Thorne', 'Sarah Thorne', 'Juliet Thorne', 'Frederick Thorne', 'Alison Tang', 'Michael Coe', 'Kirstie McHale'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2023, 1, 26), HUT_SLEEP: False, HUT_NAME: u'Lake Mackenzie Hut'},
+                    {HUT_ARRIVAL: date(2023, 1, 27), HUT_SLEEP: False, HUT_NAME: u'Routeburn Falls Hut'},
+                    {HUT_ARRIVAL: date(2023, 1, 27), HUT_SLEEP: False, HUT_NAME: u'Routeburn Flats Hut'},]
+    },
+
+    {
+        TRIP_START: date(2023, 2, 12),
+        TRIP_END: date(2023, 2, 13),
+        TRIP_DESC: 'Inland Pack Track',
+        TRIP_REPORTS: ['https://www.strava.com/activities/8551935474',
+            'https://www.strava.com/activities/8551936936',
+            'https://www.strava.com/activities/8578539877'],
+        TRIP_PARTY: ['Claire Woolf', 'Jamie Halverson'],
+    },
+
+    {
+        TRIP_START: date(2023, 4, 15),
+        TRIP_END: date(2023, 4, 15),
+        TRIP_DESC: 'Mt Oxford Odyssey',
+        TRIP_REPORTS: ['https://www.strava.com/activities/8892397218'],
+        TRIP_PARTY: ['Jeremy Wheeler', 'Iain Gover'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2023, 4, 15), HUT_SLEEP: False, HUT_NAME: u'Wharfedale Hut'},
+                    {HUT_ARRIVAL: date(2023, 4, 15), HUT_SLEEP: False, HUT_NAME: u'Black Hill Hut'},]
+    },
+
     # {
-    #     TRIP_START: date(2022, ),
-    #     TRIP_END: date(2022, ),
+    #     TRIP_START: date(2023, ),
+    #     TRIP_END: date(2023, ),
     #     TRIP_DESC: '',
     #     TRIP_ABORTED: True,
     #     TRIP_REPORTS: [''],
     #     TRIP_PARTY: [],
-    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2022, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
-    #                 {HUT_ARRIVAL: date(2022, ), HUT_SLEEP: , HUT_NAME: u''},]
+    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2023, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
+    #                 {HUT_ARRIVAL: date(2023, ), HUT_SLEEP: , HUT_NAME: u''},]
     # },
 
 ]
