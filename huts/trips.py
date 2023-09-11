@@ -799,6 +799,16 @@ trips_raw = [
                     {HUT_ARRIVAL: date(2023, 4, 15), HUT_SLEEP: False, HUT_NAME: u'Black Hill Hut'},]
     },
 
+    {
+        TRIP_START: date(2023, 9, 10),
+        TRIP_END: date(2023, 9, 10),
+        TRIP_DESC: 'Tribulation / Cookies',
+        TRIP_REPORTS: ['https://www.strava.com/activities/9818225060'],
+        TRIP_PARTY: [], # solo
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2023, 9, 10), HUT_SLEEP: False, HUT_NAME: u'Tribulation Hut'},
+                    {HUT_ARRIVAL: date(2023, 9, 10), HUT_SLEEP: False, HUT_NAME: u'Cookies Hut'},]
+    },
+
     # {
     #     TRIP_START: date(2023, ),
     #     TRIP_END: date(2023, ),
