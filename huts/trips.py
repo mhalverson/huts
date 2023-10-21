@@ -809,6 +809,16 @@ trips_raw = [
                     {HUT_ARRIVAL: date(2023, 9, 10), HUT_SLEEP: False, HUT_NAME: u'Cookies Hut'},]
     },
 
+    {
+        TRIP_START: date(2023, 10, 21),
+        TRIP_END: date(2023, 10, 21),
+        TRIP_DESC: 'Hawdon-Edwards Classic',
+        TRIP_REPORTS: ['https://www.strava.com/activities/10075005674'],
+        TRIP_PARTY: [], # solo
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2023, 10, 21), HUT_SLEEP: False, HUT_NAME: u'Hawdon Hut'},
+                    {HUT_ARRIVAL: date(2023, 10, 21), HUT_SLEEP: False, HUT_NAME: u'Edwards Hut'},]
+    },
+
     # {
     #     TRIP_START: date(2023, ),
     #     TRIP_END: date(2023, ),
