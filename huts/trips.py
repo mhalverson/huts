@@ -819,15 +819,24 @@ trips_raw = [
                     {HUT_ARRIVAL: date(2023, 10, 21), HUT_SLEEP: False, HUT_NAME: u'Edwards Hut'},]
     },
 
+    {
+        TRIP_START: date(2023, 12, 18),
+        TRIP_END: date(2023, 12, 20),
+        TRIP_DESC: 'Hump Ridge',
+        # TRIP_REPORTS: [''], # TODO post my photos
+        TRIP_PARTY: ['Claire Woolf', 'Jamie Halverson'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2023, 12, 19), HUT_SLEEP: False, HUT_NAME: u'Port Craig School Hut'},]
+    },
+
     # {
-    #     TRIP_START: date(2023, ),
-    #     TRIP_END: date(2023, ),
+    #     TRIP_START: date(2024, ),
+    #     TRIP_END: date(2024, ),
     #     TRIP_DESC: '',
     #     TRIP_ABORTED: True,
     #     TRIP_REPORTS: [''],
     #     TRIP_PARTY: [],
-    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2023, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
-    #                 {HUT_ARRIVAL: date(2023, ), HUT_SLEEP: , HUT_NAME: u''},]
+    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2024, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
+    #                 {HUT_ARRIVAL: date(2024, ), HUT_SLEEP: , HUT_NAME: u''},]
     # },
 
 ]
