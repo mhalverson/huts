@@ -828,6 +828,17 @@ trips_raw = [
         TRIP_HUTS: [{HUT_ARRIVAL: date(2023, 12, 19), HUT_SLEEP: False, HUT_NAME: u'Port Craig School Hut'},]
     },
 
+    {
+        TRIP_START: date(2024, 7, 20),
+        TRIP_END: date(2024, 7, 21),
+        TRIP_DESC: 'Glenrae Hut',
+        TRIP_REPORTS: ['https://www.strava.com/activities/11941173899',
+                       'https://www.strava.com/activities/11941193678'],
+        TRIP_PARTY: ['Dave Manning'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2024, 7, 20), HUT_SLEEP: True, HUT_NAME: u'Glenrae Hut'},
+                    {HUT_ARRIVAL: date(2024, 7, 21), HUT_SLEEP: False, HUT_NAME: u'Cold Stream Hut'},]
+    },
+
     # {
     #     TRIP_START: date(2024, ),
     #     TRIP_END: date(2024, ),
