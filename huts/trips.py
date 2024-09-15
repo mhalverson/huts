@@ -143,7 +143,6 @@ trips_raw = [
         TRIP_DESC: 'Refreshers at Otehake',
         TRIP_REPORTS: ['https://www.facebook.com/mhhalverson/posts/1493180403217'],
         TRIP_PARTY: ['Sophie Manning', 'Shannon Harley', 'Katrina McCall', 'Dave Manning', 'Hannah Johns', 'others'],
-        TRIP_HUTS: [{HUT_ARRIVAL: date(2010, 7, 17), HUT_SLEEP: False, HUT_NAME: u'Otehake Hut'},],
     },
     {
         TRIP_START: date(2010, 7, 24),
