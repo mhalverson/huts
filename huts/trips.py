@@ -839,6 +839,16 @@ trips_raw = [
                     {HUT_ARRIVAL: date(2024, 7, 21), HUT_SLEEP: False, HUT_NAME: u'Cold Stream Hut'},]
     },
 
+    {
+        TRIP_START: date(2024, 9, 14),
+        TRIP_END: date(2024, 9, 14),
+        TRIP_DESC: 'Lees Valley',
+        TRIP_REPORTS: ['https://www.strava.com/activities/12404430222'],
+        TRIP_PARTY: ['Christian Ruegg'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2024, 9, 14), HUT_SLEEP: False, HUT_NAME: u'Youngman Stream Hut'},
+                    {HUT_ARRIVAL: date(2024, 9, 14), HUT_SLEEP: False, HUT_NAME: u'Tarn Hut', HUT_REGION: 'Canterbury'},]
+    },
+
     # {
     #     TRIP_START: date(2024, ),
     #     TRIP_END: date(2024, ),
