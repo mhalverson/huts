@@ -13,6 +13,7 @@ import os.path
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DOC_HUTS_FILE = os.path.join(BASE_DIR, 'data', 'DOC_Huts.geojson')
 NON_DOC_HUTS_FILE = os.path.join(BASE_DIR, 'data', 'non_DOC_Huts.json')
+OVERRIDE_PLACE_FILE = os.path.join(BASE_DIR, 'data', 'override_place.json')
 
 
 unknown_place = u'Unknown place'
@@ -187,14 +188,21 @@ class Hut(object):
         return h
 
 def _doc_huts():
+    override_place_json = None
+    with open(OVERRIDE_PLACE_FILE) as f:
+        override_place_json = json.load(f)
+
     huts_json = None
     with open(DOC_HUTS_FILE) as f:
         huts_json = json.load(f)
     huts_json_list = huts_json['features']
 
     huts_list = []
-    for h in huts_json_list:
-        huts_list.append(Hut.from_geojson(h))
+    for hj in huts_json_list:
+        hut = Hut.from_geojson(hj)
+        if hut.name in override_place_json:
+            hut.place = override_place_json[hut.name]
+        huts_list.append(hut)
 
     return huts_list
 
