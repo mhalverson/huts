@@ -124,5 +124,14 @@
 	"lng": 171.951528,
 	"lat": -43.19413,
 	"staticLink": "https://hutbagger.co.nz/huts/waimak-gorge-walker-hut"
+    },
+	{
+        "name": "Lighthouse Cottage",
+	"place": "Awaroa/Godley Head",
+	"region": "Canterbury",
+	"island": "South Island",
+	"lng": 172.805243,
+	"lat": -43.587914,
+	"staticLink": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/godley-head/things-to-do/lighthouse-cottage/"
     }
 ]
