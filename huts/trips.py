@@ -848,6 +848,32 @@ trips_raw = [
                     {HUT_ARRIVAL: date(2024, 9, 14), HUT_SLEEP: False, HUT_NAME: u'Tarn Hut', HUT_REGION: 'Canterbury'},]
     },
 
+    {
+        TRIP_START: date(2024, 10, 12),
+        TRIP_END: date(2024, 10, 12),
+        TRIP_DESC: 'Hackett to Nelson via Rocks',
+        TRIP_REPORTS: ['https://www.strava.com/activities/12633671904'],
+        TRIP_PARTY: ['Dave Manning', 'Mike McManaway'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2024, 10, 12), HUT_SLEEP: False, HUT_NAME: u'Browning Hut'},
+                    {HUT_ARRIVAL: date(2024, 10, 12), HUT_SLEEP: False, HUT_NAME: u'Rocks Hut'},]
+    },
+
+    {
+        TRIP_START: date(2024, 12, 1),
+        TRIP_END: date(2024, 12, 1),
+        TRIP_DESC: 'St James Walkway',
+        TRIP_REPORTS: ['https://www.strava.com/activities/13021630781'],
+        TRIP_PARTY: ['Jeremy Wheeler', 'Daniel De Rose', 'Sean'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2024, 12, 1), HUT_SLEEP: False, HUT_NAME: u'Cannibal Gorge Hut'},
+                    {HUT_ARRIVAL: date(2024, 12, 1), HUT_SLEEP: False, HUT_NAME: u'Ada Pass Hut'},
+                    {HUT_ARRIVAL: date(2024, 12, 1), HUT_SLEEP: False, HUT_NAME: u'Christopher (Ada) Cullers Hut'},
+                    {HUT_ARRIVAL: date(2024, 12, 1), HUT_SLEEP: False, HUT_NAME: u'Christopher Hut'},
+                    {HUT_ARRIVAL: date(2024, 12, 1), HUT_SLEEP: False, HUT_NAME: u'Anne Hut'},
+                    {HUT_ARRIVAL: date(2024, 12, 1), HUT_SLEEP: False, HUT_NAME: u'Rokeby Hut'},
+                    {HUT_ARRIVAL: date(2024, 12, 1), HUT_SLEEP: False, HUT_NAME: u'Boyle Flat Hut'},
+                    ]
+    },
+
     # {
     #     TRIP_START: date(2024, ),
     #     TRIP_END: date(2024, ),
