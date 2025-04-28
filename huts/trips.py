@@ -874,15 +874,23 @@ trips_raw = [
                     ]
     },
 
+    {
+        TRIP_START: date(2025, 4, 28),
+        TRIP_END: date(2025, 4, 28),
+        TRIP_DESC: 'Benmore Hut to the bushline',
+        TRIP_REPORTS: ['https://www.strava.com/activities/14307792619'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2025, 4, 28), HUT_SLEEP: False, HUT_NAME: u'Benmore Hut'},]
+    },
+
     # {
-    #     TRIP_START: date(2024, ),
-    #     TRIP_END: date(2024, ),
+    #     TRIP_START: date(2025, ),
+    #     TRIP_END: date(2025, ),
     #     TRIP_DESC: '',
     #     TRIP_ABORTED: True,
     #     TRIP_REPORTS: [''],
     #     TRIP_PARTY: [],
-    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2024, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
-    #                 {HUT_ARRIVAL: date(2024, ), HUT_SLEEP: , HUT_NAME: u''},]
+    #     TRIP_HUTS: [{HUT_ARRIVAL: date(2025, ), HUT_SLEEP: , HUT_NAME: u'', HUT_REGION: '', HUT_IS_DOC_MAINTAINED: False, HUT_MULTIPLE_NIGHTS: 2},
+    #                 {HUT_ARRIVAL: date(2025, ), HUT_SLEEP: , HUT_NAME: u''},]
     # },
 
 ]
