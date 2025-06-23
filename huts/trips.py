@@ -882,6 +882,15 @@ trips_raw = [
         TRIP_HUTS: [{HUT_ARRIVAL: date(2025, 4, 28), HUT_SLEEP: False, HUT_NAME: u'Benmore Hut'},]
     },
 
+    {
+        TRIP_START: date(2025, 6, 23),
+        TRIP_END: date(2025, 6, 23),
+        TRIP_DESC: 'Mt Somers - Round the Mountain',
+        TRIP_REPORTS: ['https://www.strava.com/activities/14887629887'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2025, 6, 23), HUT_SLEEP: False, HUT_NAME: u'Woolshed Creek Hut'},
+                    {HUT_ARRIVAL: date(2025, 6, 23), HUT_SLEEP: False, HUT_NAME: u'Pinnacles Hut', HUT_REGION: 'Canterbury'},]
+    },
+
     # {
     #     TRIP_START: date(2025, ),
     #     TRIP_END: date(2025, ),
