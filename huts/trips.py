@@ -891,6 +891,27 @@ trips_raw = [
                     {HUT_ARRIVAL: date(2025, 6, 23), HUT_SLEEP: False, HUT_NAME: u'Pinnacles Hut', HUT_REGION: 'Canterbury'},]
     },
 
+    {
+        TRIP_START: date(2025, 11, 21),
+        TRIP_END: date(2025, 11, 23),
+        TRIP_DESC: 'Barker / Waimak Falls / Rolleston River',
+        TRIP_REPORTS: ['https://www.strava.com/activities/16539777039', 'https://www.strava.com/activities/16539777470', 'https://www.strava.com/activities/16539777389'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2025, 11, 21), HUT_SLEEP: False, HUT_NAME: u'Anti Crow Hut'},
+                    {HUT_ARRIVAL: date(2025, 11, 22), HUT_SLEEP: False, HUT_NAME: u'Carrington Hut'},
+                    {HUT_ARRIVAL: date(2025, 11, 22), HUT_SLEEP: False, HUT_NAME: u'Barker Hut'},
+                    {HUT_ARRIVAL: date(2025, 11, 22), HUT_SLEEP: True, HUT_NAME: u'Waimakariri Falls Hut'},]
+    },
+
+    {
+        TRIP_START: date(2025, 11, 29),
+        TRIP_END: date(2025, 11, 29),
+        TRIP_DESC: 'Paparoa Track',
+        TRIP_REPORTS: ['https://www.strava.com/activities/16595716600'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2025, 11, 29), HUT_SLEEP: False, HUT_NAME: u'Ces Clark Hut'},
+                    {HUT_ARRIVAL: date(2025, 11, 29), HUT_SLEEP: False, HUT_NAME: u'Moonlight Tops Hut'},
+                    {HUT_ARRIVAL: date(2025, 11, 29), HUT_SLEEP: False, HUT_NAME: u'Pororari Hut'},]
+    },
+
     # {
     #     TRIP_START: date(2025, ),
     #     TRIP_END: date(2025, ),
