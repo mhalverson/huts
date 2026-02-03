@@ -912,6 +912,18 @@ trips_raw = [
                     {HUT_ARRIVAL: date(2025, 11, 29), HUT_SLEEP: False, HUT_NAME: u'Pororari Hut'},]
     },
 
+    {
+        TRIP_START: date(2026, 1, 18),
+        TRIP_END: date(2026, 1, 19),
+        TRIP_DESC: 'Dragon\'s Teeth in a Day',
+        TRIP_REPORTS: ['https://www.strava.com/activities/17109080510'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2026, 1, 18), HUT_SLEEP: True, HUT_NAME: u'Trilobite Hut'},
+                    {HUT_ARRIVAL: date(2026, 1, 19), HUT_SLEEP: False, HUT_NAME: u'Fenella Hut'},
+                    {HUT_ARRIVAL: date(2026, 1, 19), HUT_SLEEP: False, HUT_NAME: u'Lonely Lake Hut'},
+                    {HUT_ARRIVAL: date(2026, 1, 19), HUT_SLEEP: False, HUT_NAME: u'Adelaide Tarn Hut'},
+                    {HUT_ARRIVAL: date(2026, 1, 19), HUT_SLEEP: False, HUT_NAME: u'Boulder Lake Hut'},]
+    },
+
     # {
     #     TRIP_START: date(2025, ),
     #     TRIP_END: date(2025, ),
