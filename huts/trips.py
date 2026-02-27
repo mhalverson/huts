@@ -896,6 +896,7 @@ trips_raw = [
         TRIP_END: date(2025, 11, 23),
         TRIP_DESC: 'Barker / Waimak Falls / Rolleston River',
         TRIP_REPORTS: ['https://www.strava.com/activities/16539777039', 'https://www.strava.com/activities/16539777470', 'https://www.strava.com/activities/16539777389'],
+        TRIP_PARTY: ['Christian Ruegg'],
         TRIP_HUTS: [{HUT_ARRIVAL: date(2025, 11, 21), HUT_SLEEP: False, HUT_NAME: u'Anti Crow Hut'},
                     {HUT_ARRIVAL: date(2025, 11, 22), HUT_SLEEP: False, HUT_NAME: u'Carrington Hut'},
                     {HUT_ARRIVAL: date(2025, 11, 22), HUT_SLEEP: False, HUT_NAME: u'Barker Hut'},
@@ -907,6 +908,7 @@ trips_raw = [
         TRIP_END: date(2025, 11, 29),
         TRIP_DESC: 'Paparoa Track',
         TRIP_REPORTS: ['https://www.strava.com/activities/16595716600'],
+        TRIP_PARTY: ['Christian Ruegg'],
         TRIP_HUTS: [{HUT_ARRIVAL: date(2025, 11, 29), HUT_SLEEP: False, HUT_NAME: u'Ces Clark Hut'},
                     {HUT_ARRIVAL: date(2025, 11, 29), HUT_SLEEP: False, HUT_NAME: u'Moonlight Tops Hut'},
                     {HUT_ARRIVAL: date(2025, 11, 29), HUT_SLEEP: False, HUT_NAME: u'Pororari Hut'},]
@@ -917,11 +919,25 @@ trips_raw = [
         TRIP_END: date(2026, 1, 19),
         TRIP_DESC: 'Dragon\'s Teeth in a Day',
         TRIP_REPORTS: ['https://www.strava.com/activities/17109080510'],
+        TRIP_PARTY: ['Dave Manning', 'Mike McManaway'],
         TRIP_HUTS: [{HUT_ARRIVAL: date(2026, 1, 18), HUT_SLEEP: True, HUT_NAME: u'Trilobite Hut'},
                     {HUT_ARRIVAL: date(2026, 1, 19), HUT_SLEEP: False, HUT_NAME: u'Fenella Hut'},
                     {HUT_ARRIVAL: date(2026, 1, 19), HUT_SLEEP: False, HUT_NAME: u'Lonely Lake Hut'},
                     {HUT_ARRIVAL: date(2026, 1, 19), HUT_SLEEP: False, HUT_NAME: u'Adelaide Tarn Hut'},
                     {HUT_ARRIVAL: date(2026, 1, 19), HUT_SLEEP: False, HUT_NAME: u'Boulder Lake Hut'},]
+    },
+
+    {
+        TRIP_START: date(2026, 2, 23),
+        TRIP_END: date(2026, 2, 23),
+        TRIP_DESC: 'Three Passes in a Day',
+        TRIP_REPORTS: ['https://www.strava.com/activities/17492013294'],
+        TRIP_PARTY: ['Dave Manning', 'Mike McManaway'],
+        TRIP_HUTS: [{HUT_ARRIVAL: date(2026, 2, 23), HUT_SLEEP: False, HUT_NAME: u'Grassy Flat Hut'},
+                    {HUT_ARRIVAL: date(2026, 2, 23), HUT_SLEEP: False, HUT_NAME: u'Harman Hut'},
+                    {HUT_ARRIVAL: date(2026, 2, 23), HUT_SLEEP: False, HUT_NAME: u'Park Morpeth Hut'},
+                    {HUT_ARRIVAL: date(2026, 2, 23), HUT_SLEEP: False, HUT_NAME: u'Carrington Hut'},
+                    {HUT_ARRIVAL: date(2026, 2, 23), HUT_SLEEP: False, HUT_NAME: u'Anti Crow Hut'},]
     },
 
     # {
